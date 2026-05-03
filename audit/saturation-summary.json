@@ -1,0 +1,44 @@
+{
+  "gbp_scraped": 44,
+  "unique_after_dedup": 44,
+  "star_distribution": {
+    "5": 43,
+    "1": 1
+  },
+  "with_owner_reply": 43,
+  "job_noun_frequency": {
+    "carpentry": 6,
+    "tile": 5,
+    "porch": 4,
+    "pool_deck": 4,
+    "general_repair": 4,
+    "plumbing": 3,
+    "electrical": 3,
+    "painting": 3,
+    "door_window": 3,
+    "demo_haul": 3,
+    "flooring": 2,
+    "roof_siding": 2,
+    "pergola": 1
+  },
+  "praise_pattern_frequency": {
+    "quality_finish": 23,
+    "highly_recommend": 18,
+    "price_value": 11,
+    "on_time": 8,
+    "fast_response": 6,
+    "repeat_customer": 5,
+    "goes_above": 5,
+    "courteous_polite": 5,
+    "cleanup": 2,
+    "price_vs_competitor": 1,
+    "honest_reliable": 1,
+    "multi_trade": 1,
+    "knowledgeable": 1
+  },
+  "job_noun_saturation_at_review": 38,
+  "praise_pattern_saturation_at_review": 41,
+  "distinct_job_nouns": 13,
+  "distinct_praise_patterns": 13,
+  "both_saturated_at_review": 41
+}
