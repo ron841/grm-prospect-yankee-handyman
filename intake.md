@@ -186,24 +186,11 @@ _[gap — none of the 5 API-returned reviews carried owner replies. Manual captu
 - Activity level: **unknown** — post cadence on FB not captured in this pass
 
 ## Photos
-**10 GBP photos downloaded via Places API → `images/`.** Subject and usability tagging deferred (per Ron's instruction — human judgment).
+**10 GBP photos at full native resolution (3024-4800px on long edge) → `images/`.** This is the entire photo library — Places Photo API caps at 10 per place, and there's no website to draw from. See [`images/README.md`](images/README.md) for the complete file inventory with attribution and Places API photo references.
 
-| File | Author attribution | Dimensions | Bytes |
-|---|---|---|---|
-| `01-gbp-the-yankee-handyman-llc.jpg` | owner | 3024×4032 | 419,765 |
-| `02-gbp-the-yankee-handyman-llc.jpg` | owner | 3024×4032 | 196,584 |
-| `03-gbp-the-yankee-handyman-llc.jpg` | owner | 4032×3024 | 1,003,718 |
-| `04-gbp-the-yankee-handyman-llc.jpg` | owner | 3024×4032 | 342,418 |
-| `05-gbp-diane-bennett.jpg` | customer (Diane Bennett — also wrote review 6) | 3600×4800 | 818,402 |
-| `06-gbp-cole-spires.jpg` | customer (Cole Spires — also wrote review 2) | 3600×4800 | 301,212 |
-| `07-gbp-the-yankee-handyman-llc.jpg` | owner | 4032×3024 | 1,073,006 |
-| `08-gbp-the-yankee-handyman-llc.jpg` | owner | 4032×3024 | 707,620 |
-| `09-gbp-the-yankee-handyman-llc.jpg` | owner | 4032×3024 | 517,432 |
-| `10-gbp-the-yankee-handyman-llc.jpg` | owner | 3024×4032 | 294,856 |
-
-- **8 owner-uploaded** + **2 customer-uploaded** (both customers cross-reference review authors — strong signal these reviews are about real, photographable jobs).
-- All shot at 3024×4032 or 4032×3024 — looks like phone-camera resolution, full-resolution. Should be enough quality for hero placement on a site.
-- **FB photo grab:** _[scrape-failed]_ FB returned HTTP 400 on anonymous static fetch; only the profile picture (saved as logo) was retrievable via the `graph.facebook.com/<page>/picture` endpoint. FB feed photos would need Playwright + login. Probably acceptable since GBP has 10 owner photos already.
+- **8 owner-uploaded** (`01-08-gbp-owner-*.jpg`) + **2 customer-uploaded** (`09-gbp-customer-diane-bennett.jpg`, `10-gbp-customer-cole-spires.jpg`). Both customers cross-reference review authors — high-trust visual evidence of real jobs.
+- Subject and usability tagging deferred to Design (human judgment per Ron's instruction).
+- **FB photo grab:** _[scrape-failed]_ FB returned HTTP 400 on anonymous static fetch; only the profile picture (saved as logo) was retrievable via the `graph.facebook.com/<page>/picture` endpoint. FB feed photos would need Playwright + login. Acceptable since GBP has 10 photos.
 - **IG photo grab:** _[skipped]_ IG handle unverified.
 
 ## Logo
