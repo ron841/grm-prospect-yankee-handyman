@@ -14,39 +14,39 @@
 - Single HTML document at root, served as `index.html`
 
 ### Hosting
-- **Recommended: Netlify** (or Vercel — equivalent for this use case)
-- Reasoning: free tier covers traffic, native form handling (no separate backend), automatic HTTPS, Cloudflare-grade CDN, instant rollback. Match what GRM uses for similar service-contractor sites if there's a precedent.
-- **Domain:** `yankeehandyman.com` if available; else subdomain under GRM-managed apex. Confirm at walkthrough.
-- **HTTPS:** required, redirect all HTTP → HTTPS, HSTS preload eligible after 1 year of clean serving
-- **WWW handling:** redirect `www.yankeehandyman.com` → `yankeehandyman.com` (or vice-versa — pick one, redirect the other)
+- **Standard: Vercel** (team scope `ron-7323s-projects`). Non-negotiable per existing GRM infrastructure — matches the Volthom, T&F Electric, and Grandview deployment pattern.
+- Reasoning: GRM has standardized on Vercel for all sold-client and prospect-preview contractor sites. Vercel offers the same free-tier story as Netlify (HTTPS, CDN, instant rollback) and integrates with GRM's existing GitHub commit-verification gate.
+- **Domain:** `yankeehandyman.com` if available; else subdomain under GRM-managed apex. Confirm at walkthrough. Preview deploys land at `*.vercel.app`.
+- **HTTPS:** automatic via Vercel; HSTS preload eligible after 1 year of clean serving
+- **WWW handling:** redirect `www.yankeehandyman.com` → `yankeehandyman.com` (or vice-versa — pick one, redirect the other) via Vercel domain config
 
 ### Build pipeline
-- Source-controlled in a GRM GitHub repo (or whatever GRM's standard is)
-- Netlify auto-deploys from `main` branch
-- Preview deploys for PRs / branches
-- No build step required if hand-coded HTML/CSS — but if Code uses a static-site generator (Eleventy, Astro), commit the build output OR configure Netlify to run the build
+- Source-controlled in a GRM GitHub repo (private until preview, public for Design walkthrough access — see Yankee Handyman intake repo as the pattern)
+- Vercel auto-deploys preview on every commit; production deploy is a manual `vercel --prod` after walkthrough confirmation
+- No build step required for hand-coded HTML/CSS sites; `vercel.json` at the deploy root configures static serving + cache headers
 
 ---
 
 ## §2 — Forms
 
 ### Form backend
-- **Recommended: Netlify Forms** (free tier: 100 submissions/month, plenty for a contractor)
-- Submissions email to Anthony's address + a GRM-managed mirror inbox for backup/audit
-- No third-party form service (Formspree, Typeform) needed — Netlify Forms is sufficient
+- **Standard: Static Forms** (`api.staticforms.xyz`). Non-negotiable per existing GRM infrastructure — matches the Volthom contact-form pattern.
+- Static Forms is host-agnostic (works on Vercel, Netlify, raw S3, anywhere); routes by access key, not host integration.
+- Submissions route to the email associated with the access key. No host-coupled form integration.
 
 ### Form HTML contract
-- Add `data-netlify="true"` and a hidden `form-name` field on the contact form
-- Add a honeypot field per Netlify spec (`netlify-honeypot="bot-field"` + a hidden input)
-- Set `action="/thank-you"` OR handle submit inline with the success message per `content-inventory.md` `contact.form.success_message`
+- POST to `https://api.staticforms.xyz/submit`
+- Required fields: hidden `accessKey` (the GRM-issued key for this prospect), plus the visible form fields
+- Optional fields: hidden `subject` (email subject line), hidden `redirectTo` (post-submit URL), hidden `honeypot` (spam trap; Static Forms convention is `name="honeypot"` + `display:none`)
+- Frontend wires inline `fetch()` POST with JSON body for inline success/error UX (matches `content-inventory.md` `contact.form.success_message` / `error_message_generic`); a regular form POST also works as fallback
 
 ### Email destinations
-- **Primary:** Anthony's email — `pending-walkthrough` (currently unknown per intake)
-- **Mirror/backup:** a GRM-managed inbox (e.g. `forms@getrootedmedia.com` or per GRM standard)
-- **Fallback if Anthony's email is not provided by launch:** route only to the GRM mirror; GRM forwards manually until Anthony provides his address
+- Static Forms key is provisioned per prospect by GRM ops. Submissions route to whatever email is registered against that key.
+- **Yankee Handyman key:** `sf_e0e200934d4f36c17a10d00c` — currently routes to `ron@getrootedmedia.com` (GRM-managed inbox; GRM forwards to Anthony manually until walkthrough confirms his email, then key destination is updated in the Static Forms dashboard)
+- **Fallback if Anthony's email is not provided by launch:** keep routing to the GRM mirror; flip after walkthrough
 
 ### Spam protection
-- Netlify honeypot field (free, invisible)
+- Hidden `honeypot` field per Static Forms convention
 - No reCAPTCHA at v1 (adds friction; not warranted for expected volume)
 
 ---
@@ -344,7 +344,7 @@ These are real decisions that will surface during build but belong elsewhere:
 | Pool deck quote: paraphrase or verbatim | Anthony | Walkthrough |
 | Anthony's email | Anthony | Walkthrough |
 | Instagram handle | Anthony | Walkthrough |
-| Specific Netlify or Vercel preference | GRM ops | Whichever GRM has standardized |
+| ~~Specific Netlify or Vercel preference~~ | ~~GRM ops~~ | **Resolved: Vercel is GRM standard. See §1.** |
 | GA4 measurement ID | GRM ops | Provisioned at deploy time |
 | Domain ownership / DNS access | Anthony or GRM | Pre-launch |
 
