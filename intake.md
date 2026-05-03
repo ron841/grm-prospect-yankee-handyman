@@ -63,17 +63,22 @@
 
 ## Voice — Reviews
 
-> **Capture method, iteration 2:** Scraped via Playwright DOM extraction against the Google Maps reviews panel (~25 scroll-load cycles to fully load the side panel). Pulled **44 reviews with body text** out of 50 total — the 6 missing are 5-star ratings with no body, which the saturation rule treats as zero-evidence-add and skips.
+> **Capture method, iteration 2 (re-scrape 2026-05-03):** Scraped via Playwright DOM extraction against the Google Maps reviews panel (~25 scroll-load cycles). Pulled **44 reviews with body text** out of Yankee Handyman's 50 total. The 6 missing are 5-star ratings with no body, treated as zero-evidence-add per the saturation rule. **Re-scrape adds owner-reply text via the `.CDe7pd` selector** + reply-relative dates via `.DZSIDd`.
 
-> **Saturation status (per audit-script-implications.md #5):** **REACHED.** Distinct job-nouns plateau at review #38/44 (13 of 15 categories matched). Distinct praise-patterns plateau at #41/44 (13 of 14 categories matched). Both fully saturated by review #41; remaining 3 reviews are confirmation-not-discovery. **Birdeye and Yelp not pulled** per the locked rule — additional captures would not surface new job-nouns or new praise-patterns. Birdeye listing confirms the same 50 reviews with 4.9 rating, all sourced from Google.
+> **Saturation status (per audit-script-implications.md #5):** **REACHED.** Distinct job-nouns plateau at review #38/44 (13 of 15 categories matched). Distinct praise-patterns plateau at #41/44 (13 of 14 categories matched). Both fully saturated by review #41; remaining 3 reviews are confirmation-not-discovery. Birdeye and Yelp not pulled per the locked rule.
 
-> **Owner-reply evidence (overturns iter-1 finding):** **43 of 44 reviews have an owner reply.** The iter-1 audit had concluded Anthony does not reply to reviews — that was wrong; the API's 5 returned reviews simply happened to truncate the reply field. Manual review of the scrape confirms Anthony replies to nearly every review.
+> **Owner-reply evidence (overturns iter-1 finding):** **43 of 44 reviews have an owner reply.** The iter-1 audit had concluded Anthony does not reply — wrong; the API's 5 returned reviews simply happened to truncate the reply field.
 
-> **Star distribution:** 43 × 5-star, 1 × 1-star. The single 1-star is from author 'DM _' on Apr 12, 2024 (Birdeye reports this as the lowest-rated review). Captured below at its index.
+> **Reply voice — quick analysis** (full reply text appears in each entry below):
+> - Length distribution: **8 canned (<30 chars)**, **28 short (30-100)**, **7 medium (100-250)**, **0 detailed (>250)**. No novel-length replies — Anthony keeps it brief, but most are personalized.
+> - Recurring openers: "Thank you for choosing the Yankee Handyman" (3×), "Thank you for choosing us" (2×), "Thank you." (2×). The personal openers ("It was my pleasure…", "Thank you Zack…") are warmer than the boilerplate.
+> - **Voice tone:** gratitude-first, family/community framing ("being a part of the family", "we appreciate you relying on us"), forward-looking ("looking forward to more projects"), occasional 😁 emoji (5 replies use one). Switches between "we" and "I/me" — solo-operator with collective framing.
+> - **Implication for Design:** the reviews-page voice can lean on Anthony's actual reply phrases as connector copy or section breaks. Notable phrases worth lifting: "being a part of the family", "It was my pleasure", "looking forward to more projects", "Thank you for trusting us".
+
+> **Star distribution:** 43 × 5-star, 1 × 1-star (DM_, Apr 12 2024 per Birdeye). The 1-star is captured below at its index in body-length sort order.
 
 ### Review 1 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Judy
 - Text: "I called the Yankee Handyman after a friend of mine recommended him in Ocala. I called midday and Anthony came out that evening to give us an estimate. We had water damage on our living room wall from a bathroom that we wanted completely torn out and redone.
 
@@ -86,20 +91,18 @@ A sidenote but important to us. He was doing the bathroom for a mentally challen
 We have since had him back for many jobs. He has remodeled another bathroom completely. Tiled and painted a bedroom. Replaced the ceiling on our wrap around porch and installed fans on it. He repaired and replaced to porch railings. Then, built and installed wooden hurricane shutters for our windows. He redone the wiring for our pool pump and installed the new pump.
 
 Every job we have called him for, he has been reasonably priced and the work has been perfect. We keep him on speed dial."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you Judy again for choosing us."
 
 ### Review 2 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Cheryl Mulhern
 - Text: "I used Anthony (The Yankee Handyman) to install a garbage disposal for me. I wanted it done ASAP, and Anthony was able to work me into his schedule the same day I called.
 I had contacted a few plumbers who quoted me $350–$500! I was shocked and was never going to pay more for an installation than I paid for the actual disposal. Anthony was recommended by our Bellechase homeowners Facebook group, where we only allow the very best contractors to be added to the page, and he did not disappoint.
 He took pity on me and squeezed me in at the end of his day. He did a great job and his price was phenomenal—I only paid $125, which is his standard service fee. I recommend him 100%. He even cleaned up after himself and took the old disposal away. As we all know, that’s not usually the case with contractors, as I’ve often been left with a mess after a job is done."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(2 months ago)_: "Thank you for being a part of the family. We appreciate you relying on us!"
 
 ### Review 3 _[GBP scrape, 2026-05-03]_
 - Stars: 1
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: DM _
 - Text: "I would not recommend hiring this handyman for your projects/home repair needs.
 
@@ -114,298 +117,258 @@ If you decide you want to give this person an opportunity for your work, here's 
 4. Lastly, if records are important for you or your business, make sure you get an invoice before making a payment. It's been about a month since my work was "completed," he received his payment, and there is still no invoice for me.
 
 Good luck."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(Edited 2 months ago)_: "I’m sorry to hear we weren't on the same page. I take pride in the quality of my work and aim for 5-star service with every client. I appreciate your feedback. Best of luck with your future home projects."
 
 ### Review 4 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Linda Weis
 - Text: "Tried to get a contractor to repair my wooden deck. Went through 10 contractors and no one showed up. That was until yankee Handyman responded and was there in 3 days. He took and impossible rehab of my deck and in two days he had rebuilt it with it looking new,  He did what he said he would do on time and within budget. His team was great and left me with a smile on my face. Even neighbors commented how great it looked. Thank you Yankee Handyman to a job well done."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you we appreciate the opportunity. I’m happy that I put a smile on your face. That’s what it’s all about. Thanks for the 🎂.  …"
 
 ### Review 5 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Diane Bennett
 - Text: "Anthony built a deck for my pool- I cannot be more pleased- he was so detailed right down to sanding all the edges and I do mean ALL. Excellent quality and a great price. I did ask around if the price was fair for my area and everyone either said yes or they would have charged almost $1000 more. I already have him quoting another project for me. Zoom in and checkout how he did the curve around the pool- holy awesome!!!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(5 days ago)_: "😁. Thank you. I really do appreciate my community. I hope you enjoy it. 
+Thank you for choosing us!!! …"
 
 ### Review 6 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Barbara Roberts
 - Text: "Anthony and his co-worker are the hardest working guys I’ve ever seen. They did a fantastic job replacing a wall and installing a sliding glass door on our Florida room.   They did such a good job on that, I hired them to also replace another wall and install 2 windows on the new wall .   I can’t wait to see my new room!   Hard working and trustworthy.  I recommend them to anyone."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you, Barbara. It was a pleasure."
 
 ### Review 7 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: JEAN JONES
 - Text: "Anthony has done drywall repair, painting, flooring repair and replacement, and miscellaneous plumbing and electrical repair for me on several sites. He has replaced an entire walk-in shower, cabinets, toilets, etc., and does beautiful tile work. He's dependable and knowledgeable. I have recommended him to at least four other people and all of them were happy with his work."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(3 years ago)_: "It’s my Absolute pleasure to work with you Jean.  Thank you kindly."
 
 ### Review 8 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: David Bittman
 - Text: "Anthony took over the construction of a screened in porch that the initial builder defaulted on and made poorly. Anthony rebuilt it from start to finish including the decking for screening and a roof. Then he built my rear deck. I highly recommend Yankee LLC. Fair pricing good quality and done in a timely fashion."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(7 months ago)_: "Thank you David. I’m sure we will meet again."
 
 ### Review 9 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Cole Spires
 - Text: "We highly recommend Yankee Handyman, he recently finished enclosing our porch as well as adding an interior wall to another room. They did a great job and made a big difference in our home. Also re-tiled another room for us. Really cares about his work. Will use him again when needed. 5 star rated for a reason!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(9 months ago)_: "We appreciate your business, sir, and looking forward to more projects in the future. Thank you for choosing us. 😁 …"
 
 ### Review 10 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Megan Stone
 - Text: "I could not be happier with the service. Anthony is professional, does tip quality work, ands very reasonably priced.  We had a major leak in our kitchen. He was knowledgeable, worked with our schedule, and got the job done better than I could have imagined. Highly recommend."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Your very welcome."
 
 ### Review 11 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Zulma Velez
 - Text: "Exceptional service. We are very please with the finished product. Detail oriented, Time efficient, Friendly, Customer service oriented. 10/10 highly recommended, we will most certainly be repeat customers. If you are looking for handyman services, Anthony is your guy!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(7 months ago)_: "Thank you for choosing us. We appreciate our community. Thank you. 😊  …"
 
 ### Review 12 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Maudeline Henry
 - Text: "He removed all the carpets  in my two bedrooms, and removed the tiles in my kitchen, dining room. Also he got my backsplash done. After that he installed the new tiles. He was doing a great job and kept the place clean. The price was reasonable.
 Thank you"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you for the opportunity. We aim to please."
 
 ### Review 13 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: George Kim
 - Text: "Really good guy to work with thats super knowlegeable. Will go above and beyond to get things done in a timely matter with quality work.
 In my opinion, he's a Jack of all trades and Master of all!!
 Thank you Mr. YANKEE!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(2 years ago)_: "Your very welcome George."
 
 ### Review 14 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Andrew Abad
 - Text: "Anthony is amazing! He goes above and beyond in every job he does, he has done probably over 20 projects for me and every single time he’s done great work at an extremely reasonable price! Highly recommended!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(2 months ago)_: "Thank you for allowing me the opportunity to do a good job for you.  I’m sure I will be seeing more of you in the future. 😁❤️ …"
 
 ### Review 15 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Zac Stone
 - Text: "Fantastic work! Finished a day earlier than estimate. There was an issue with the previous work done on our floor and Anthony was able finish with a clean look from bedroom to bathroom. Highly recommend!!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you Zack. It was a mess now it’s a success!"
 
 ### Review 16 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Molly Groves
 - Text: "Did excellent work creating a new circuit and hanging a chandelier for our kitchen. High quality work, professional, showed up on time, and him and his team worked together as a dynamic duo."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(3 months ago)_: "😁 thank you. We appreciate you!! …"
 
 ### Review 17 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Devin P
 - Text: "Definitely recommend. Quick, efficient, friendly, good with dogs (ours kept sniffing at him while he worked 😂), and very affordable (charged us a quarter of what we were quoted elsewhere!) …"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you."
 
 ### Review 18 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Jon De Lucia
 - Text: "Anthony strives for and maintains 100% customer satisfaction, I was given a estimate, agreed upon & works was completed in two days. What more could I have ask for. Thanks Anthony."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(3 weeks ago)_: "Thank you Jon. We appreciate your business."
 
 ### Review 19 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Griselle Martin
 - Text: "I hired Anthony to do some work on my home. He showed up on time, was very professional, and did a great job. His price are reasonable. I will definitely be using him again"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you for choosing the Yankee handyman LLC. We appreciate your support."
 
 ### Review 20 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: audrey bittman
 - Text: "We have been working with Anthony for several years and can not recommend him highly enough. He does excellent work, he is honest & reliable. You will not be disappointed!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(2 months ago)_: "I am thankful. I appreciate you guys having me on speed dial😁. I love my community and all the great people like you who relies on me.  Thank you. It means a lot.  …"
 
 ### Review 21 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Bob Hart
 - Text: "Did a fantastic job for us. Will be calling on him again. He was prompt and courteous. He knew what he was doing. And we even gave him an extra job. Also very reasonable."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(2 weeks ago)_: "We appreciate you choosing us. Thank you 😊. …"
 
 ### Review 22 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: William Stone
 - Text: "He did a fantastic job replacing the wood around one of our doors which had termite damage.  The door trim now looks just like all the others.  So happy about it."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "It was yet our pleasure to Help. . Thank you!!"
 
 ### Review 23 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Sam Perry
 - Text: "Excellent service.  On time. He stayed until the project was done to completion! Really went above and beyond.  Excellent pricing.  Really knows what he's doing."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "We appreciate the opportunity and  your kind words."
 
 ### Review 24 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Leanna Fitzgerald
 - Text: "Anthony did a great job repairing our siding, making new screens and painting our house! Will definitely call Anthony again for any future repairs/renovations."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(3 years ago)_: "It was my pleasure.  It turned out beautiful."
 
 ### Review 25 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Terri
 - Text: "Super Great guy ,he put in our screen door and now added a railing on the back porch . Definitely be calling him again for my bucket list. Thank you, Anthony."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(6 months ago)_: "Yes ma’am 😊😃your very welcome.  …"
 
 ### Review 26 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Dan Carter
 - Text: "Hired Anthony to help me with some jobs too tough for me. He was a very hard, knowledgable,  worker! Got done what I wanted!
 We are Hurricane Ian survivors."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you Dan. It was my pleasure."
 
 ### Review 27 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Brendon Pointing
 - Text: "Anthony did a tear out and remodel of my bathroom. As I get older, I wanted a walk-in shower. He did great work and I am beyond satisfied!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you."
 
 ### Review 28 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Karen Cowan
 - Text: "Great work, super patient, professional and respectful.  He did everything exactly as I wanted. I would definitely hire Anthony again."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(Edited a year ago)_: "Thank you for your support."
 
 ### Review 29 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Edward Campea
 - Text: "I highly recommend Anthony (Yankee Handyman) for any project you need done on your home. He did a pavillion and trash can container."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you Edd. It was my pleasure."
 
 ### Review 30 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Ashley Santiago
 - Text: "Anthony was absolutely great to work with. He came right away and solved all my problems and the floors looks wonderful."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(4 months ago)_: "Thank you for choosing us. We appreciate your busy ad love the opportunity. Thank you."
 
 ### Review 31 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Brian Stamper
 - Text: "Yankee showed up when he said he would.. the work was done well.. price was ok ... would use again if needed.. touché"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you sir for the opportunity. we appreciate your feedback."
 
 ### Review 32 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Jennifer LeMay
 - Text: "We had Yankee Handyman paint the interior of our house and they did a fantastic job. Will definitely use them again."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(6 days ago)_: "Thank you for choosing us.  It’s always a pleasure. We appreciate your business."
 
 ### Review 33 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Jorge Aliaga
 - Text: "Great service!  Easy to work with and always on time,  if not early.  One of the few I would recommend to anyone."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(7 months ago)_: "It was my pleasure. Thank you for the opportunity."
 
 ### Review 34 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Ryan McBride
 - Text: "On time, professional, solid job through. I will be using his services again for more work in my house."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you for choosing the Yankee Handyman LLC Ryan."
 
 ### Review 35 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Robert Nedow
 - Text: "Very friendly and got the job done quickly and efficiently.  Cleaned up after the work was done."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "The Yankee Handyman at your Service!!!! It was our pleasure. Creating beautiful spaces and smiling faces is what we really strive for. Thank you."
 
 ### Review 36 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Jarron Remington
 - Text: "On time, did the job quickly. Very reasonable.  Will hire again."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you. I appreciate you choosing The Yankee Handyman LLC."
 
 ### Review 37 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Katheryn Foerste
 - Text: "He was efficient and worked fast. Pleased with repair."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(2 years ago)_: "It was my pleasure. Thank you."
 
 ### Review 38 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Wally Plumstead
 - Text: "Outstanding. Went above and beyond too. Professional."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you for choosing The Yankee Handyman, we appreciate your business. Thank you."
 
 ### Review 39 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Hi 5 Tobacco and vapor
 - Text: "Great work, fast response and reasonably priced"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "It was a pleasure. Thank you for choosing The Yankee Handyman LLC."
 
 ### Review 40 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: tyisha epps
 - Text: "Highly recommended neighborhood handyman"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "We appreciate your business. Thank you."
 
 ### Review 41 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Sherry Brickner
 - Text: "Awesome person and great job!"
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you Ma’am."
 
 ### Review 42 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Patrice Stone
 - Text: "We appreciate your support."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "We appreciate your support."
 
 ### Review 43 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Ju B
 - Text: "construction of a pergola."
-- Owner reply: none visible
+- Owner reply: _none_
 
 ### Review 44 _[GBP scrape, 2026-05-03]_
 - Stars: 5
-- Date: _[gap — Google Maps date class returned whitespace; available via re-scrape if needed]_
 - Reviewer: Ariana Vixen
 - Text: "Thank you for choosing us."
-- Owner reply: present (text not extracted in this scrape)
+- Owner reply _(a year ago)_: "Thank you for choosing us."
 
 ## Voice — Saturation tables
 
@@ -420,11 +383,11 @@ We are Hurricane Ian survivors."
 | porch | 4 |
 | pool deck | 4 |
 | general repair | 4 |
-| plumbing | 3 |
 | electrical | 3 |
-| painting | 3 |
-| door window | 3 |
+| plumbing | 3 |
 | demo haul | 3 |
+| door window | 3 |
+| painting | 3 |
 | flooring | 2 |
 | roof siding | 2 |
 | pergola | 1 |
@@ -440,13 +403,13 @@ We are Hurricane Ian survivors."
 | price value | 11 |
 | on time | 8 |
 | fast response | 6 |
-| repeat customer | 5 |
 | goes above | 5 |
+| repeat customer | 5 |
 | courteous polite | 5 |
 | cleanup | 2 |
 | price vs competitor | 1 |
-| honest reliable | 1 |
 | multi trade | 1 |
+| honest reliable | 1 |
 | knowledgeable | 1 |
 
 **Reading:** quality/finish dominates (23 of 44 = 52%); highly-recommend pattern second (18 = 41%); price/value third (11 = 25%). On-time and fast-response together account for 14 (32%) — the speed signal is strong. Repeat-customer pattern shows 5 explicit mentions; the actual repeat-customer rate is likely higher (most reviewers don't disclose history). Cleanup mentioned in only 2 — was the iter-1 hero differentiator but the data doesn't support it as a top claim; demote.
@@ -458,7 +421,7 @@ We are Hurricane Ian survivors."
 - **Quality / finish work** — overwhelmingly dominant praise pattern
 - **Speed / responsiveness** — strong (fast_response + on_time = 14)
 - **Cleanup as differentiator** — **WEAK in evidence** (2 mentions only). Iter-1 leaned on this; the data doesn't support headline weight. Demote in iter-2.
-- **Owner-replies-to-reviews** — strong active engagement signal (43 of 44). Adds trust pattern not surfaced in iter-1.
+- **Owner-replies-to-reviews** — strong active engagement signal (43 of 44). Replies are gratitude-first, family-framed, often forward-looking. Notable phrases for Design to consider as connector copy: "being a part of the family", "It was my pleasure", "looking forward to more projects", "Thank you for trusting us".
 
 ## Voice — Owner Replies (synthesized)
 _[gap — none of the 5 API-returned reviews carried owner replies. Manual capture of the other 45 needed to confirm whether Anthony replies to reviews at all. None of the recent-capture excerpts noted a reply either, but reply-presence wasn't explicitly checked.]_
