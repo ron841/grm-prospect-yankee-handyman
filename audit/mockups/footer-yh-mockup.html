@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yankee Handyman — Ocala Handyman, Plumbing, Electrical, Carpentry</title>
+<meta name="description" content="Anthony Porett runs Yankee Handyman in Ocala. Plumbing, electrical, carpentry, tile, paint. $125 flat service call. 50 reviews, 4.9 stars on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:title" content="Yankee Handyman — Ocala">
+<meta property="og:description" content="Creating Beautiful Spaces and Smiling Faces. Fifty Marion County customers, 4.9 stars on Google.">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:url" content="https://yankee-handyman.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yankee Handyman — Ocala">
+<meta name="twitter:description" content="Creating Beautiful Spaces and Smiling Faces.">
+<meta name="twitter:image" content="og-image.jpg">
+<link rel="canonical" href="https://yankee-handyman.vercel.app/">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#5f463b">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Type */
+  --font-display: 'Merriweather', Georgia, serif;
+  --font-eyebrow: 'Comfortaa', system-ui, sans-serif;
+  --font-body:    'Nunito', system-ui, sans-serif;
+
+  /* Type scale */
+  --t-eyebrow: 13px;
+  --t-body-sm: 16px;
+  --t-body: 18px;
+  --t-body-lg: 20px;
+  --t-h4: 22px;
+  --t-h3: 28px;
+  --t-h2: 40px;
+  --t-h1: 56px;
+
+  /* Color — provisional brand pending logo extraction */
+  --c-ink: #1a1a1a;
+  --c-ink-soft: #4a4a4a;
+  --c-paper: #fafaf7;
+  --c-paper-2: #f0ede4;
+  --c-line: #e0dccf;
+  --c-brand: #5f463b;       /* provisional navy */
+  --c-brand-soft: rgba(95,70,59,0.12);
+  --c-accent: #9c6955;       /* provisional barn red */
+  --c-success: #2d6a4f;
+  --c-error: #9b2c2c;
+
+  /* Spacing */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+
+  /* Radii */
+  --r-sm: 4px; --r-md: 8px; --r-lg: 16px;
+  --line: 1px solid var(--c-line);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  color: var(--c-ink);
+  background: var(--c-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--s-6);
+}
+
+/* === Header / Nav === */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 72px;
+  background: rgba(250, 250, 247, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: var(--line);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--s-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--c-ink);
+}
+.nav-logo {
+  width: 32px;
+  height: 32px;
+  background: var(--c-brand);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: var(--r-sm);
+}
+.nav-links {
+  display: flex;
+  gap: var(--s-7);
+  list-style: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+}
+.nav-links a {
+  color: var(--c-ink-soft);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--c-ink); }
+.nav.scrolled { box-shadow: 0 1px 0 var(--c-line); }
+
+.nav-cta {
+  background: var(--c-brand);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.nav-cta::before {
+  content: "";
+  width: 14px; height: 14px;
+  background: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>') center / contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>') center / contain no-repeat;
+}
+
+main { padding-top: 72px; }
+
+/* === Hero === */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #2a4d6e 0%, #1a3a5c 60%, #0d2540 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.65) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.10) 65%),
+    url('images/01-gbp-owner-the-yankee-handyman-llc.jpg');
+  background-size: cover, cover, cover;
+  background-position: center, center, 70% center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  padding: var(--s-9) 0;
+}
+.hero-eyebrow {
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: var(--s-5);
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h1);
+  line-height: 1.15;
+  margin-bottom: var(--s-4);
+  text-wrap: balance;
+}
+.hero-supporting {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--t-body-lg);
+  color: rgba(255,255,255,0.92);
+  margin-bottom: var(--s-5);
+}
+.hero-trust {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--t-body);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: var(--s-7);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.hero-trust::before {
+  content: "★★★★★";
+  color: #f0c14b;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+}
+.hero-cta-row {
+  display: flex;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: 14px 28px;
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--t-body);
+  cursor: pointer;
+  border: 0;
+  transition: transform 0.15s, background 0.2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  background: var(--c-accent);
+  color: #fff;
+}
+.btn-primary:hover { background: #b07a64; }
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.8); }
+
+/* === Trust marquee === */
+.trust {
+  background: var(--c-paper-2);
+  padding: var(--s-6) 0;
+  border-bottom: var(--line);
+}
+.trust-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-5);
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--t-body-sm);
+  color: var(--c-ink);
+}
+.trust-item-icon {
+  width: 18px;
+  height: 18px;
+  background: var(--c-brand);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.trust-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--c-line);
+}
+
+/* === Section base === */
+.section {
+  padding: var(--s-9) 0;
+}
+.section-eyebrow {
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-bottom: var(--s-4);
+}
+.section-headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h2);
+  line-height: 1.2;
+  color: var(--c-ink);
+  margin-bottom: var(--s-4);
+  text-wrap: balance;
+  max-width: 720px;
+}
+.section-subhead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--t-body-lg);
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+  max-width: 640px;
+  margin-bottom: var(--s-8);
+}
+
+/* === Services === */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-6);
+}
+.service-card {
+  background: var(--c-paper);
+  border: var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  transition: border-color 0.2s;
+}
+.service-card:hover { border-color: var(--c-ink-soft); }
+.service-card.anchor {
+  grid-column: span 2;
+  background: linear-gradient(180deg, var(--c-paper) 0%, var(--c-paper-2) 100%);
+  border-color: var(--c-brand-soft);
+}
+.service-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h4);
+  margin-bottom: var(--s-3);
+}
+.service-blurb {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--t-body);
+  color: var(--c-ink-soft);
+  line-height: 1.6;
+}
+.service-evidence {
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: var(--line);
+}
+.service-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--t-body-sm);
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+}
+.service-citation {
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-top: var(--s-3);
+  display: block;
+}
+.services-cta {
+  text-align: center;
+  margin-top: var(--s-8);
+}
+.btn-brand {
+  background: var(--c-brand);
+  color: #fff;
+}
+.btn-brand:hover { background: #4a3528; }
+
+/* === Pool decks (feature) === */
+.pool {
+  background: var(--c-paper-2);
+  padding: var(--s-10) 0;
+}
+.pool-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--s-8);
+  align-items: center;
+}
+.pool-image {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg);
+  background-image: url('images/09-gbp-customer-diane-bennett.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.pool-caption {
+  font-family: var(--font-body);
+  font-size: var(--t-body-sm);
+  color: var(--c-ink-soft);
+  margin-top: var(--s-3);
+}
+.pool-body {
+  font-family: var(--font-body);
+  font-size: var(--t-body-lg);
+  line-height: 1.55;
+  color: var(--c-ink);
+  max-width: 480px;
+  margin-bottom: var(--s-7);
+}
+.pool-quote {
+  border-left: 3px solid var(--c-brand);
+  padding-left: var(--s-5);
+}
+.pool-quote-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--t-h3);
+  line-height: 1.35;
+  color: var(--c-ink);
+  margin-bottom: var(--s-4);
+}
+.pool-quote-attr {
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+}
+
+/* === Proof === */
+.bellechase-callout {
+  background: var(--c-paper-2);
+  border-left: 3px solid var(--c-brand);
+  border-radius: var(--r-md);
+  padding: var(--s-5) var(--s-6);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  color: var(--c-ink);
+  margin: var(--s-6) 0 var(--s-8);
+  max-width: 720px;
+}
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-6);
+  margin-bottom: var(--s-9);
+}
+.quote-card {
+  background: var(--c-paper);
+  border: var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+}
+.quote-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--t-body-lg);
+  line-height: 1.5;
+  color: var(--c-ink);
+  flex: 1;
+  margin-bottom: var(--s-5);
+}
+.quote-attr {
+  padding-top: var(--s-4);
+  border-top: var(--line);
+}
+.quote-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--t-body);
+  color: var(--c-ink);
+  margin-bottom: var(--s-1);
+}
+.quote-role {
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-4);
+}
+.photo-tile {
+  aspect-ratio: 1;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  position: relative;
+  background: var(--c-paper-2);
+  display: flex;
+  align-items: flex-end;
+}
+.photo-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-tile .photo-caption { position: relative; z-index: 1; }
+.photo-caption {
+  background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, transparent 100%);
+  color: #fff;
+  width: 100%;
+  padding: var(--s-5) var(--s-4) var(--s-3);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--t-body-sm);
+}
+
+/* === About === */
+.about {
+  background: var(--c-paper);
+}
+.about-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-inner .section-headline,
+.about-inner .section-subhead {
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-body {
+  font-family: var(--font-body);
+  font-size: var(--t-body-lg);
+  line-height: 1.6;
+  color: var(--c-ink);
+  max-width: 640px;
+  margin: var(--s-7) auto 0;
+}
+.about-body p + p { margin-top: var(--s-5); }
+
+/* === FAQ === */
+.faq {
+  background: var(--c-paper-2);
+}
+.faq-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq-leadin {
+  font-family: var(--font-body);
+  font-size: var(--t-body-lg);
+  color: var(--c-ink-soft);
+  margin-bottom: var(--s-3);
+}
+.faq-list {
+  margin-top: var(--s-8);
+}
+.faq-item {
+  padding: var(--s-6) 0;
+  border-bottom: var(--line);
+}
+.faq-q {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h4);
+  color: var(--c-ink);
+  margin-bottom: var(--s-3);
+}
+.faq-a {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  color: var(--c-ink-soft);
+  line-height: 1.7;
+}
+
+/* === Contact === */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--s-8);
+  margin-top: var(--s-8);
+}
+.phone-block {
+  margin-bottom: var(--s-7);
+}
+.phone-label {
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-bottom: var(--s-3);
+}
+.phone-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h2);
+  color: var(--c-ink);
+  display: block;
+  margin-bottom: var(--s-3);
+  line-height: 1.1;
+}
+.phone-subline {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  color: var(--c-ink-soft);
+}
+.address-line {
+  font-family: var(--font-body);
+  font-size: var(--t-body-lg);
+  color: var(--c-ink);
+}
+.map-link {
+  display: inline-block;
+  margin-top: var(--s-3);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--t-body);
+  color: var(--c-brand);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.contact-form {
+  background: var(--c-paper-2);
+  border: var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-7);
+}
+.form-headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h4);
+  margin-bottom: var(--s-5);
+}
+.form-group {
+  margin-bottom: var(--s-5);
+}
+.form-label {
+  display: block;
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-bottom: var(--s-2);
+}
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: var(--line);
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  background: var(--c-paper);
+  color: var(--c-ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px var(--c-brand-soft);
+}
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-radio-group {
+  display: flex;
+  gap: var(--s-2);
+}
+.form-radio {
+  flex: 1;
+  position: relative;
+}
+.form-radio input { position: absolute; opacity: 0; pointer-events: none; }
+.form-radio label {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border: var(--line);
+  border-radius: var(--r-md);
+  background: var(--c-paper);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--t-body-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.form-radio input:checked + label {
+  background: var(--c-brand);
+  color: #fff;
+  border-color: var(--c-brand);
+}
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--c-brand);
+  color: #fff;
+  border: 0;
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--t-body);
+  cursor: pointer;
+  margin-top: var(--s-3);
+  transition: background 0.2s;
+}
+.form-submit:hover { background: #4a3528; }
+
+/* === Footer === */
+.footer {
+  background: var(--c-ink);
+  color: var(--c-paper);
+  padding: var(--s-9) 0 var(--s-6);
+  margin-top: var(--s-9);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--s-7);
+  margin-bottom: var(--s-8);
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h3);
+  margin-bottom: var(--s-4);
+  color: #fff;
+}
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  color: rgba(255,255,255,0.75);
+  max-width: 320px;
+  line-height: 1.6;
+}
+.footer-label {
+  font-family: var(--font-eyebrow);
+  font-weight: 700;
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: var(--s-4);
+}
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.footer-list a,
+.footer-list span {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  color: rgba(255,255,255,0.85);
+  transition: color 0.2s;
+}
+.footer-list a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--s-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+.footer-meta {
+  font-family: var(--font-body);
+  font-size: var(--t-body-sm);
+  color: rgba(255,255,255,0.55);
+}
+
+/* === Sticky mobile call bar === */
+.sticky-call {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: var(--c-accent);
+  color: #fff;
+  padding: var(--s-4);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--t-body-lg);
+  text-align: center;
+  z-index: 90;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .pool-grid, .contact-grid { grid-template-columns: 1fr; }
+  .pool-grid { gap: var(--s-6); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  :root { --t-h1: 36px; --t-h2: 32px; --t-h3: 24px; }
+  .nav-links { display: none; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
+  .nav-brand span { display: none; }
+  .hero { min-height: 70vh; }
+  .hero-content { padding: var(--s-7) 0; }
+  .section { padding: var(--s-7) 0; }
+  .pool { padding: var(--s-8) 0; }
+  .services-grid,
+  .proof-grid { grid-template-columns: 1fr; }
+  .service-card.anchor { grid-column: span 1; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .trust-row { gap: var(--s-4); }
+  .trust-divider { display: none; }
+  .trust-item { width: 100%; }
+  .sticky-call { display: block; }
+  main { padding-bottom: 64px; }
+  .hero-cta-row { flex-direction: column; align-items: stretch; }
+  .btn { width: 100%; }
+}
+
+
+
+.form-status { margin-top: var(--s-4); padding: var(--s-3) var(--s-4); border-radius: var(--r-md); font-family: var(--font-body); font-size: var(--t-body-sm); }
+.form-status.success { background: rgba(45,106,79,0.10); color: var(--c-success); border: 1px solid rgba(45,106,79,0.25); }
+.form-status.error { background: rgba(155,44,44,0.10); color: var(--c-error); border: 1px solid rgba(155,44,44,0.25); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Yankee Handyman LLC",
+  "alternateName": "The Yankee Handyman",
+  "telephone": "+1-239-867-8447",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6726 Cherry Rd",
+    "addressLocality": "Ocala",
+    "addressRegion": "FL",
+    "postalCode": "34472",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Ocala"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Marion County"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "$",
+  "url": "https://yankee-handyman.vercel.app/",
+  "image": "https://yankee-handyman.vercel.app/og-image.jpg",
+  "logo": "https://yankee-handyman.vercel.app/logo.jpg",
+  "founder": {
+    "@type": "Person",
+    "name": "Anthony Porett"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "50",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "sameAs": [
+    "https://www.facebook.com/TheYankeeHandymanLLC/"
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">
+      <div class="nav-logo">YH</div>
+      <span>Yankee Handyman</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="tel:+12398678447">Call (239) 867-8447</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Ocala · Marion County</div>
+        <h1 class="hero-headline">Creating Beautiful Spaces and Smiling Faces.</h1>
+        <p class="hero-supporting">No job too big or small.</p>
+        <div class="hero-trust">50 reviews · 4.9 stars on Google</div>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="tel:+12398678447">Call (239) 867-8447</a>
+          <a class="btn btn-ghost" href="#proof">See What He's Done</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST MARQUEE -->
+  <section class="trust" aria-label="Why Marion County homeowners hire Anthony">
+    <div class="container">
+      <div class="trust-row">
+        <div class="trust-item">
+          <span class="trust-item-icon">★</span>
+          <span>50 Google reviews · 4.9 stars</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-item-icon">✓</span>
+          <span>Recommended by the Bellechase homeowners group</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-item-icon">⚡</span>
+          <span>Same-day service when the schedule allows</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-item-icon">$</span>
+          <!-- pending-walkthrough: $125 fee — confirm current with Anthony before prod -->
+          <span>$125 flat service-call fee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-eyebrow">What He Does</div>
+      <h2 class="section-headline">One handyman. Most jobs.</h2>
+      <p class="section-subhead">Plumbing, electrical, carpentry, tile, paint. Forty-eight hours from estimate to done, when the job allows.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card anchor">
+          <h3 class="service-label">General handyman work</h3>
+          <p class="service-blurb">Punch lists, repairs, the small jobs other contractors won't quote. One client has had Anthony back for over twenty projects.</p>
+          <div class="service-evidence">
+            <p class="service-quote">"He has done probably over 20 projects for me and every single time he's done great work."</p>
+            <span class="service-citation">Andrew Abad · Repeat customer</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-label">Plumbing</h3>
+          <p class="service-blurb">Disposals, fixtures, leaks. The kind of plumbing call where another shop would quote you four hundred dollars and a week.</p>
+          <div class="service-evidence">
+            <!-- pending-walkthrough: $125 fee — confirm current with Anthony before prod -->
+            <p class="service-quote">"I had contacted a few plumbers who quoted me $350–$500. I only paid $125, his standard service fee."</p>
+            <span class="service-citation">Cheryl Mulhern · Bellechase</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-label">Electrical</h3>
+          <p class="service-blurb">New circuits, lights, fixtures. Hung a chandelier and ran the new circuit it needed in one visit.</p>
+          <div class="service-evidence">
+            <p class="service-quote">"Did excellent work creating a new circuit and hanging a chandelier for our kitchen."</p>
+            <span class="service-citation">Molly Groves · Electrical</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-label">Carpentry and framing</h3>
+          <p class="service-blurb">Porch enclosures, interior walls, finish carpentry. The pool-deck job was finished to furniture grade.</p>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-label">Tile</h3>
+          <p class="service-blurb">Re-tile rooms, patches, repairs. Part of the same crew that frames the wall and paints it.</p>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-label">Pool decks</h3>
+          <p class="service-blurb">Built and finished, with the carpentry-grade detail most pool guys skip. Sanded edges. Curve around the pool.</p>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-label">Interior painting</h3>
+          <p class="service-blurb">Rooms, trim, touch-ups. Same standard as the rest of the work.</p>
+          <div class="service-evidence">
+            <p class="service-quote">"Fantastic job. Will use again."</p>
+            <span class="service-citation">Jennifer LeMay · Painting</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="services-cta">
+        <a class="btn btn-brand" href="tel:+12398678447">Ask About a Job</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POOL DECKS FEATURE -->
+  <section class="pool">
+    <div class="container">
+      <div class="pool-grid">
+        <div>
+          <div class="pool-image"></div>
+          <p class="pool-caption">Diane Bennett's pool deck. Ocala, 2026.</p>
+        </div>
+        <div>
+          <div class="section-eyebrow">Finish Carpentry</div>
+          <h2 class="section-headline">Pool decks built like furniture.</h2>
+          <p class="pool-body">Most pool decks get framed, screwed down, and called done. Anthony sanded every edge. He cut the curve around the pool to match the coping. Diane Bennett got three other quotes before she called him; his came in fair and the work came in furniture-grade.</p>
+
+          <div class="pool-quote">
+            <p class="pool-quote-text">"He sanded all the edges and cut a curve around the pool. The price was fair. I had three other quotes."</p>
+            <div class="pool-quote-attr">Diane Bennett · Pool deck · 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="section-eyebrow">What Customers Say</div>
+      <h2 class="section-headline">Fifty reviews. Four-point-nine stars. Mostly repeat customers.</h2>
+      <p class="section-subhead">From plumbing emergencies to twenty-project relationships.</p>
+
+      <div class="bellechase-callout">
+        Recommended by the Bellechase homeowners group, where only the contractors they trust get added.
+      </div>
+
+      <div class="proof-grid">
+
+        <div class="quote-card">
+          <p class="quote-text">"He took pity on me and squeezed me in at the end of his day. He did a great job and his price was phenomenal."</p>
+          <div class="quote-attr">
+            <div class="quote-name">Cheryl Mulhern</div>
+            <div class="quote-role">Plumbing · Bellechase</div>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote-text">"Anthony is amazing. He goes above and beyond in every job he does, he has done probably over 20 projects for me."</p>
+          <div class="quote-attr">
+            <div class="quote-name">Andrew Abad</div>
+            <div class="quote-role">Repeat customer</div>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote-text">"High quality work, professional, showed up on time, and him and his team worked together as a dynamic duo."</p>
+          <div class="quote-attr">
+            <div class="quote-name">Molly Groves</div>
+            <div class="quote-role">Electrical</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Photo grid: customer-attributed photos first, then owner photos. Subjects/captions pending walkthrough — re-author per actual photo content. -->
+      <div class="photo-grid">
+        <div class="photo-tile">
+          <img src="images/09-gbp-customer-diane-bennett.jpg" loading="lazy" alt="Pool deck Anthony built for Diane Bennett in Ocala. Sanded edges and a curved cut around the pool.">
+          <div class="photo-caption">Pool deck. Diane Bennett, 2026.</div>
+        </div>
+        <div class="photo-tile">
+          <img src="images/10-gbp-customer-cole-spires.jpg" loading="lazy" alt="Porch enclosure and re-tile work Anthony finished for Cole Spires in Ocala, 2025.">
+          <div class="photo-caption">Porch enclosure and re-tile. Cole Spires, 2025.</div>
+        </div>
+        <div class="photo-tile">
+          <img src="images/02-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
+          <div class="photo-caption">Completed work, 2025.</div>
+        </div>
+        <div class="photo-tile">
+          <img src="images/03-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
+          <div class="photo-caption">Completed work, 2025.</div>
+        </div>
+        <div class="photo-tile">
+          <img src="images/04-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
+          <div class="photo-caption">Completed work, 2025.</div>
+        </div>
+        <div class="photo-tile">
+          <img src="images/05-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
+          <div class="photo-caption">Completed work, 2025.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-headline">Two men, one truck, most of Marion County.</h2>
+        <div class="about-body">
+          <p>Anthony Porett runs Yankee Handyman out of Ocala. Most days it's him and one other guy on the truck, working their way through punch lists nobody else wanted to quote. Some of his customers have been calling him for years.</p>
+          <p>He doesn't have a sales pitch. He picks up the phone, gives you a real number, shows up, does the work, and cleans up before he leaves. That last part shouldn't be unusual. In Marion County in 2026, it still is.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="section-eyebrow">Before You Call</div>
+        <p class="faq-leadin">A few things customers usually ask.</p>
+        <h2 class="section-headline">Real answers, not polite ones.</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-q">What's the service-call fee?</h3>
+            <!-- pending-walkthrough: $125 fee — confirm current with Anthony before prod -->
+            <p class="faq-a">$125 flat. That covers the visit and most small jobs in full. Bigger jobs get an estimate before any work starts.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">How fast can he get here?</h3>
+            <p class="faq-a">Same-day when the schedule allows. Two-day estimate-to-completion is typical on bigger jobs. Call and ask.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">What kind of jobs does he take?</h3>
+            <p class="faq-a">Plumbing, electrical, carpentry, framing, tile, paint, pool decks. He's done over twenty projects for one customer alone. If you're not sure, call and describe it.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Where does he work?</h3>
+            <p class="faq-a">Ocala and Marion County. Bellechase homeowners hire him often enough to vouch for him by name.</p>
+          </div>
+          <!-- License Q omitted per content-inventory build instruction (pending-walkthrough) -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2 class="section-headline">Tell him about the job.</h2>
+      <p class="section-subhead">Phone is fastest. He answers most calls during business hours and returns voicemails the same day.</p>
+
+      <div class="contact-grid">
+        <div>
+          <div class="phone-block">
+            <div class="phone-label">Call</div>
+            <a class="phone-number" href="tel:+12398678447">(239) 867-8447</a>
+            <div class="phone-subline">Mon–Fri 8–5 · Sat 9–5</div>
+          </div>
+
+          <div>
+            <div class="phone-label">Based in</div>
+            <div class="address-line">6726 Cherry Rd</div>
+            <div class="address-line">Ocala, FL 34472</div>
+            <a class="map-link" href="https://maps.google.com/?q=6726+Cherry+Rd,+Ocala,+FL+34472" target="_blank" rel="noopener">Open in Maps →</a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://api.staticforms.xyz/submit" method="POST" id="contact-form">
+          <input type="hidden" name="accessKey" value="sf_e0e200934d4f36c17a10d00c">
+          <input type="hidden" name="subject" value="Yankee Handyman — new contact form submission">
+          <input type="hidden" name="redirectTo" value="https://yankeehandyman.example/?submitted=1">
+          <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+          <h3 class="form-headline">Or send a quick message.</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="name">Your name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Anthony Porett" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone number</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="(352) 555-0123" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="job">What's the job?</label>
+            <textarea class="form-textarea" id="job" name="job_description" placeholder="Garbage disposal install, porch re-screen, pool deck — anything." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <span class="form-label">Best way to reach you</span>
+            <div class="form-radio-group">
+              <div class="form-radio">
+                <input type="radio" id="pref-call" name="contact_preference" value="call">
+                <label for="pref-call">Call back</label>
+              </div>
+              <div class="form-radio">
+                <input type="radio" id="pref-text" name="contact_preference" value="text">
+                <label for="pref-text">Text</label>
+              </div>
+              <div class="form-radio">
+                <input type="radio" id="pref-either" name="contact_preference" value="either" checked>
+                <label for="pref-either">Either</label>
+              </div>
+            </div>
+          </div>
+
+          <button class="form-submit" type="submit">Send to Anthony</button>
+          <div class="form-status" id="form-status" hidden></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+          <div style="width:44px;height:44px;background:#ebdecd;color:#5f463b;display:flex;align-items:center;justify-content:center;font-family:'Merriweather',Georgia,serif;font-weight:700;font-size:20px;border-radius:6px;flex-shrink:0;">YH</div>
+          <div class="footer-brand" style="margin-bottom:0;">Yankee Handyman</div>
+        </div>
+        <p class="footer-tagline">Anthony Porett and one other guy, working their way through Ocala one job at a time.</p>
+      </div>
+      <div>
+        <div class="footer-label">Reach Anthony</div>
+        <ul class="footer-list">
+          <li><a href="tel:+12398678447">(239) 867-8447</a></li>
+          <li><span>6726 Cherry Rd, Ocala, FL 34472</span></li>
+          <li><span>Mon–Fri 8–5 · Sat 9–5 · Sun closed</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-label">Find Him Online</div>
+        <ul class="footer-list">
+          <li><a href="https://www.facebook.com/TheYankeeHandymanLLC/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Reviews on Google</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-meta">© 2026 The Yankee Handyman LLC · Ocala, Florida</div>
+      <div class="footer-meta">A Get Rooted Media site.</div>
+    </div>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+12398678447">📞 Call (239) 867-8447</a>
+
+
+
+
+<script>
+(function () {
+  // Nav background on scroll
+  var nav = document.querySelector('.nav');
+  function onScroll() {
+    if (window.scrollY > 80) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Form handling — POST to Static Forms via fetch, show inline success/error
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.hidden = false;
+      status.className = 'form-status';
+      status.textContent = 'Sending...';
+      var data = new FormData(form);
+      var json = {};
+      data.forEach(function (v, k) { json[k] = v; });
+      fetch('https://api.staticforms.xyz/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(json)
+      }).then(function (r) { return r.json(); })
+        .then(function (resp) {
+          if (resp && resp.success) {
+            status.className = 'form-status success';
+            status.textContent = 'Got it. He\'ll call back the same day if it comes in during business hours.';
+            form.reset();
+          } else {
+            status.className = 'form-status error';
+            status.textContent = "Something didn't go through. Try again, or call (239) 867-8447.";
+          }
+        }).catch(function () {
+          status.className = 'form-status error';
+          status.textContent = "Something didn't go through. Try again, or call (239) 867-8447.";
+        });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
