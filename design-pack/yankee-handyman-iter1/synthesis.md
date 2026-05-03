@@ -104,8 +104,7 @@
 
 ## 8. Hero composition
 
-- **Hero photo (provisional, post-audit):** **`fb-01-cover-photo-pergola.jpg`** (FB cover photo, 960×720, finished pergola). Source: Code's Playwright FB scrape, 2026-05-03 (`audit/fb-photos/`). Selected over the 10-photo GBP library because it's the only public asset depicting *finished* finish-carpentry work at usable resolution; the GBP candidates are either process shots, customer-uploaded mid-progress, or unidentifiable subject. **Resolution caveat:** 960×720 is below the 2400×1350 hero spec; will pixel up on widescreens. Walkthrough action: ask Anthony for the original at native phone resolution (likely 4032×3024).
-- **Hero photo (legacy, rejected):** **TBD from 10-photo library** — `[design-tagged]` after photo review (next sub-step). Strong hero candidates given subject hints from intake: `09-gbp-customer-diane-bennett.jpg` (pool deck — finish carpentry visible, customer-uploaded) or `10-gbp-customer-cole-spires.jpg` (porch enclosure / interior wall). The customer-uploaded photos likely outperform owner-uploaded for hero use because: (a) customer photos cross-reference review text directly, and (b) owner-uploaded contractor photos tend toward project-mid-progress shots that need explanation.
+- **Hero photo:** **TBD from 10-photo library** — `[design-tagged]` after photo review (next sub-step). Strong hero candidates given subject hints from intake: `09-gbp-customer-diane-bennett.jpg` (pool deck — finish carpentry visible, customer-uploaded) or `10-gbp-customer-cole-spires.jpg` (porch enclosure / interior wall). The customer-uploaded photos likely outperform owner-uploaded for hero use because: (a) customer photos cross-reference review text directly, and (b) owner-uploaded contractor photos tend toward project-mid-progress shots that need explanation.
 - **Hero copy stack:**
   1. **Tagline (committed):** "Creating Beautiful Spaces and Smiling Faces."
   2. **Supporting line:** "No job too big or small." (demoted from tagline candidates per §1)
@@ -122,7 +121,7 @@ Provisional section sequence (subject to photo-tagging confirmation):
 1. **Hero** — see §8.
 2. **Trades / Services** — list-led; the seven services from §3 with one-line plain descriptions. Photo: optional tile of in-progress work if any of the 8 owner-uploaded photos depicts active multi-trade scope. If not, no image — list density is fine.
 3. **Proof — what customers say** — three review excerpts from §4 + one short paragraph naming the Bellechase HOA vouching. Photo: customer-uploaded photo (one of `09-` or `10-`) used as supporting tile.
-4. **Finish carpentry** — one focused section for the "more than handyman" hook. Headline reframed from pool-deck-specific to **finish-carpentry-general** after Code's photo audit (2026-05-03) revealed the public photo library has zero usable finished-pool-deck images, but does have a strong finished-pergola asset (FB cover photo, 960×720). Pool deck remains the strongest *evidentiary* hook (Diane Bennett's review is unmatched), so it stays as headline supporting evidence — but the section's *photo* and *headline* lead with finish-carpentry-general. Body: short paragraph framing finish-carpentry as the differentiator, Diane's pool-deck quote as the proof, pergola or other finish-carpentry photo as the visual. **Re-author trigger:** photo-evidence/copy-evidence mismatch documented in Code's audit `comp-diff.md` — copy committed to "sanded every edge / cut the curve around the pool to match the coping" against a mid-construction framing photo, breaking the truth contract.
+4. **Pool decks & carpentry** — one focused section for the finish-carpentry hook (Diane Bennett's pool deck is the clearest "this is more than handyman" evidence). Photo: `09-gbp-customer-diane-bennett.jpg`. Body: short paragraph + Diane's review excerpt. This section earns its own slot because the pool-deck evidence is the operator's strongest portfolio claim and gets buried inside a generic services list otherwise.
 5. **About Anthony** — short. Operator's voice. Two paragraphs at most. Mention the team-of-two ("dynamic duo" from review 3) without naming the second person (no evidence base). Mention years in Ocala obliquely ("years working in and around Ocala") without committing to a number. Photo: an owner-uploaded photo if any depict Anthony directly, else no photo (cropped tool/job detail tile is acceptable; do not invent an "Anthony portrait").
 6. **Contact** — phone-prominent per §5. Address (6726 Cherry Rd, Ocala). Hours table from intake. Form secondary.
 
@@ -174,8 +173,7 @@ Provisional section sequence (subject to photo-tagging confirmation):
 | 9 | Trust secondary | "Recommended by the Bellechase homeowners group." | §Voice — Review 1 verbatim |
 | 10 | Service area | "Serving Ocala and Marion County." | §Location & Contact |
 | 11 | Differentiator paragraph | (see §11 above) | composite — see §11 cites |
-| 12 | Finish-carpentry section headline | "Finish carpentry, not just framing." | Design-authored, §11-style implicit-baseline |
-| 12a | Finish-carpentry section caption | Diane Bennett review 6 excerpt (pool deck as proof) | §Voice — Review 6 |
+| 12 | Pool-deck section caption | Diane Bennett review 6 excerpt | §Voice — Review 6 |
 | 13 | Porch/tile section caption | Cole Spires review 2 excerpt | §Voice — Review 2 |
 | 14 | Hours table | M-F 8-5, Sat 9-5, Sun closed | §Hours & Availability |
 | 15 | Address | 6726 Cherry Rd, Ocala, FL 34472 | §Location & Contact |

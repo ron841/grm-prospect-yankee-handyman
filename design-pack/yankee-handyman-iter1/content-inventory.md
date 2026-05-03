@@ -129,15 +129,14 @@
 - **Anchor:** `#proof`
 
 ### `hero.image`
-- **Value:** `audit/fb-photos/fb-01-cover-photo-pergola.jpg` (provisional, post-audit 2026-05-03)
-- **Status:** pending-walkthrough (confirm with Anthony; request high-res original — likely 4032×3024 on his phone)
-- **Note:** Code's audit (`audit/AUDIT.md`, severity High) flagged the previous hero candidate (`09-gbp-customer-diane-bennett.jpg` / cement-board install) for composition fight with text overlay AND for being process-not-product. The FB cover-photo pergola is the only public asset depicting *finished* finish-carpentry at usable resolution. Resolution caveat: 960×720 will pixel up on widescreens; will use as-is for v1 with re-shoot flagged for v2.
-- **Legacy candidates (rejected post-audit):** `09-gbp-customer-diane-bennett.jpg` (pool deck, customer-uploaded, finish carpentry visible) OR `10-gbp-customer-cole-spires.jpg` (porch enclosure, customer-uploaded)
+- **Value:** TBD — strongest hero candidate from 10-photo library
+- **Status:** pending-image-review
+- **Top candidates (synthesis-flagged):** `09-gbp-customer-diane-bennett.jpg` (pool deck, customer-uploaded, finish carpentry visible) OR `10-gbp-customer-cole-spires.jpg` (porch enclosure, customer-uploaded)
 - **Build instruction:** apply two-axis gradient overlay (top→bottom 40-65% black, left→right 10-65% black) so headline sits in the dark quadrant per GRM photography rule
 
 ### `hero.image.alt`
-- **Value (post-audit):** "Finished pergola Anthony built in Ocala — cedar posts, slatted top, clean detail."
-- **Status:** microcopy-design / pending-walkthrough
+- **Value (placeholder, retitle on selection):** "Pool deck Anthony built in Ocala — finished carpentry with a curve around the pool"
+- **Status:** microcopy-design / pending-image-review
 - **Voice:** Front Porch (sensory, specific concrete nouns — alt text is a Front Porch-friendly zone)
 - **Citation:** intake §Voice — Review 6 (Diane Bennett evidence)
 - **Note:** if a different photo is selected at walkthrough, regenerate alt against the GRM voice rule "specific concrete nouns; Marion County."
@@ -316,30 +315,29 @@ Each item:
 
 ---
 
-## Finish carpentry section
+## Pool decks & carpentry section
 
-> Earned-its-own-section per synthesis §9 step 4. **Re-authored 2026-05-03** after Code's audit flagged the prior pool-deck-led version as a copy/photo truth violation (committed copy described "sanded every edge / curve around the pool to match the coping" against a mid-construction framing photo). Section now leads with finish-carpentry-general framing; Diane Bennett's pool-deck quote remains the proof, demoted from headline to evidence row.
+> Earned-its-own-section per synthesis §9 step 4. The pool-deck evidence is Anthony's strongest portfolio claim and gets buried inside a generic services list otherwise.
 
-### `finish_section.eyebrow`
+### `pool_section.eyebrow`
 - **Value:** "FINISH CARPENTRY"
 - **Status:** microcopy-design
 - **Voice:** Closing Table eyebrow
 
-### `finish_section.headline`
-- **Value:** "Finish carpentry, not just framing."
+### `pool_section.headline`
+- **Value:** "Pool decks built like furniture."
 - **Status:** microcopy-design
-- **Voice:** Closing Table (sharp, contrarian — names what most operators skip)
-- **Citation:** synthesis §9 step 4 (re-authored), intake §Voice — Review 6, §Voice — Review 2
-- **Rejected prior version:** "Pool decks built like furniture." — strong line, but pool-deck-specific against a section that no longer leads with pool decks. Demoted; may return at walkthrough if Anthony surfaces a finished pool-deck photo.
+- **Voice:** Closing Table (sharp, contrarian — pool decks don't usually get this treatment)
+- **Citation:** synthesis §9 step 4, intake §Voice — Review 6
 
-### `finish_section.body`
-- **Value:** "Most handymen frame it, screw it down, call it done. Anthony sands the edges. He cuts curves to match the coping. He notches around what's already there instead of trimming around it. Diane Bennett's pool deck got three other quotes before she called him; the work is what made the difference. Cole Spires hired him for one porch and brought him back for the bedroom tile. The called him; his came in fair and the work came in furniture-grade."
+### `pool_section.body`
+- **Value:** "Most pool decks get framed, screwed down, and called done. Anthony sanded every edge. He cut the curve around the pool to match the coping. Diane Bennett got three other quotes before she called him; his came in fair and the work came in furniture-grade."
 - **Status:** microcopy-design
 - **Voice:** Closing Table (contrarian opening, specifics, named example — canonical Closing Table structure)
 - **Citation:** intake §Voice — Review 6, §Differentiator 2
 - **Note:** GRM universal rule prohibits em dashes — body uses semicolons and periods only.
 
-### `finish_section.evidence_quote`
+### `pool_section.evidence_quote`
 - **Quote:** "He sanded all the edges and cut a curve around the pool. The price was fair — I had three other quotes."
 - **Attribution:** "Diane Bennett · Pool deck · 2026"
 - **Status:** microcopy-design (synthesized from intake §Voice — Review 6 manual capture; verify exact wording at walkthrough — Anthony or Diane may have a more accurate version)
@@ -347,13 +345,12 @@ Each item:
 - **Citation:** intake §Voice — Review 6
 - **Walkthrough flag:** the manual capture said "fair pricing confirmed by other quotes Diane obtained" — phrasing above is a tightened paraphrase. If Anthony has the actual review text or screenshot, swap to verbatim.
 
-### `finish_section.image`
-- **Value:** `audit/fb-photos/fb-01-cover-photo-pergola.jpg` (provisional, post-audit) OR a different finish-carpentry-strong photo from the 9-photo FB scrape if walkthrough surfaces a stronger fit
-- **Status:** pending-walkthrough
-- **Caption:** "Pergola — Ocala, finished detail."
-- **Alt:** "Finished pergola in Ocala — cedar posts, slatted top, clean detail; built by Anthony Porett."
+### `pool_section.image`
+- **Value:** `09-gbp-customer-diane-bennett.jpg`
+- **Status:** pending-image-review
+- **Caption:** "Diane Bennett's pool deck. Ocala, 2026."
+- **Alt:** "Pool deck with sanded edges and a curve around the pool, built by Anthony Porett in Ocala for Diane Bennett in 2026."
 - **Voice (alt):** Front Porch (specific concrete nouns)
-- **Note:** if the hero swaps to pergola, this section needs a *different* finish-carpentry photo to avoid duplication. Walkthrough action: pick best non-hero finish-carpentry photo from `audit/fb-photos/fb-02` through `fb-09`.
 
 ---
 

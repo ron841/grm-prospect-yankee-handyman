@@ -239,9 +239,7 @@ Full-width strip, `--c-paper-2` background, 96px tall, vertically centered conte
 
 ---
 
-## §6 — Finish carpentry (feature section)
-
-> **Re-authored 2026-05-03** post-audit. Section reframed from pool-deck-led to finish-carpentry-general after Code's audit (`audit/AUDIT.md`) flagged copy/photo truth violation. Diane Bennett's pool-deck quote remains as evidence row; headline and image reframed.
+## §6 — Pool decks (feature section)
 
 ### Layout
 
@@ -250,7 +248,7 @@ Full-width section, `--c-paper-2` background, padding `--s-10` top/bottom deskto
 ```
 [container, 2-col grid, gap --s-8]
   [left col (image, 7/12 cols)]
-    [finish_section.image (provisional: pergola from FB scrape, or finish-carpentry-strong photo), full-width, aspect 4/3, radius --r-lg]
+    [pool_section.image, full-width, aspect 4/3, radius --r-lg]
     [caption, t-body-sm, color --c-ink-soft, margin-top --s-3]
   [right col (body, 5/12 cols)]
     [eyebrow]
@@ -550,8 +548,8 @@ Form posts to a build-time-configured endpoint (mailto fallback if no backend). 
 
 ## §16 — Build-order checklist (for Code)
 
-1. Resolve logo → extract `--c-brand` and `--c-accent`. **Post-audit (2026-05-03):** k-means extraction against actual logo returned brown/sepia, zero blue clusters. Provisional navy was wrong direction. `--c-brand` is now sepia/brown family per audit. Confirm at walkthrough whether sepia is intentional brand DNA or JPEG-degradation artifact (raster + age + compression desaturation).
-2. Resolve hero image. **Post-audit (2026-05-03):** hero now `audit/fb-photos/fb-01-cover-photo-pergola.jpg` (FB cover photo, 960×720, finished pergola). Source: Code's Playwright FB scrape. Walkthrough action: ask Anthony for high-res original (likely 4032×3024 native phone). If no candidate passes review, fall back to ink solid background (per §3 instructions).
+1. Resolve logo → extract `--c-brand` and `--c-accent`. If extraction fails or palette is monochrome, set `--c-brand` to `#1a3a5c` (provisional navy) and flag for walkthrough.
+2. Resolve hero image. If no candidate passes review at walkthrough time, fall back to ink solid background (per §3 instructions).
 3. Build §0 tokens as CSS custom properties in a single `:root` block.
 4. Build sections §3 through §11 in document order.
 5. Build §12 sticky bar (mobile) last.
@@ -566,15 +564,14 @@ Form posts to a build-time-configured endpoint (mailto fallback if no backend). 
 
 | Slot | State | Resolution path |
 |---|---|---|
-| Photo selections (hero, proof grid 4 owner-uploaded, finish-carpentry, about, OG) | pending-image-review | Walkthrough with image review (hero now provisional pergola post-audit) |
+| Photo selections (hero, proof grid 4 owner-uploaded, pool, about, OG) | pending-image-review | Walkthrough with image review |
 | License/insurance line (trust marquee + FAQ #5) | pending-walkthrough | Confirm with Anthony; default to omit |
 | Phone-answering subhead exact wording | pending-walkthrough partial | Confirm phone behavior; revise if needed |
 | Instagram footer link | pending-walkthrough | Verify handle exists |
 | Logo color extraction | pending-extraction | Build step before §3+ |
 | GBP listing URL | pending-extraction | From `place-details-raw.json` |
 | Favicon | pending-extraction | Vectorize logo OR raster crop |
-| Diane Bennett pool-deck quote (paraphrase vs verbatim) | pending-walkthrough | Confirm wording with Anthony or source |
-| Brand color: sepia/brown vs intentional vs JPEG-degraded | walkthrough-critical | k-means extraction returned brown/sepia; confirm intent before publish |
+| Pool deck Diane Bennett quote (paraphrase vs verbatim) | pending-walkthrough | Confirm wording with Anthony or source |
 | Service-call fee currency ($125 flat) | walkthrough-critical | **Confirm number is current** before publish |
 
 ---

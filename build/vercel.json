@@ -1,24 +1,14 @@
 {
   "version": 2,
+  "cleanUrls": true,
   "headers": [
     {
-      "source": "/(.*\\.(jpg|png|webp|woff2|ico))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "source": "/images/(.*)",
+      "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]
     },
     {
-      "source": "/",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=300, must-revalidate"
-        }
-      ]
+      "source": "/(favicon|favicon-32|og-image|logo).:ext(png|jpg|ico)",
+      "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]
     }
-  ],
-  "cleanUrls": true
+  ]
 }

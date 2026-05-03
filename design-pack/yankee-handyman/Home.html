@@ -25,17 +25,17 @@
   --t-h2: 40px;
   --t-h1: 56px;
 
-  /* Color — provisional brand pending logo extraction */
-  --c-ink: #1a1a1a;
-  --c-ink-soft: #4a4a4a;
-  --c-paper: #fafaf7;
-  --c-paper-2: #f0ede4;
-  --c-line: #e0dccf;
-  --c-brand: #1a3a5c;       /* provisional navy */
-  --c-brand-soft: rgba(26,58,92,0.12);
-  --c-accent: #b8392a;       /* provisional barn red */
-  --c-success: #2d6a4f;
-  --c-error: #9b2c2c;
+  /* Color — post-audit (2026-05-03): k-means against actual logo returned brown/sepia, zero blue clusters. Provisional navy was wrong direction. Pending walkthrough confirmation that sepia is intentional brand DNA vs JPEG-degraded artifact. */
+  --c-ink: #1f1810;
+  --c-ink-soft: #5a4a3a;
+  --c-paper: #faf6ee;
+  --c-paper-2: #ede4d2;
+  --c-line: #d8ccb4;
+  --c-brand: #6b4423;       /* sepia/brown from logo k-means */
+  --c-brand-soft: rgba(107,68,35,0.12);
+  --c-accent: #a8784a;       /* warm tan accent */
+  --c-success: #5a6a3f;
+  --c-error: #8b3a2a;
 
   /* Spacing */
   --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
@@ -163,7 +163,7 @@ main { padding-top: 72px; }
   overflow: hidden;
 }
 .hero::before {
-  /* Photo placeholder — dotted pattern suggesting unselected photo */
+  /* Photo placeholder — post-audit: provisional pergola from FB cover (audit/fb-photos/fb-01-cover-photo-pergola.jpg, 960×720). Walkthrough action: request high-res from Anthony. */
   content: "";
   position: absolute;
   inset: 0;
@@ -174,8 +174,8 @@ main { padding-top: 72px; }
   background-position: 0 0, center;
 }
 .hero::after {
-  /* placeholder marker — flag this is pending photo */
-  content: "[ hero photo pending image review ]";
+  /* placeholder marker */
+  content: "[ hero: pergola — pending high-res from operator ]";
   position: absolute;
   bottom: var(--s-5);
   right: var(--s-6);
@@ -434,7 +434,7 @@ main { padding-top: 72px; }
   text-transform: uppercase;
 }
 .pool-image::after {
-  content: "[ pool deck — Diane Bennett, 2026 ]";
+  content: "[ finish-carpentry photo — pending walkthrough ]";
 }
 .pool-caption {
   font-family: var(--font-body);
@@ -995,7 +995,7 @@ main { padding-top: 72px; }
 
         <div class="service-card">
           <h3 class="service-label">Pool decks</h3>
-          <p class="service-blurb">Built and finished, with the carpentry-grade detail most pool guys skip. Sanded edges. Curve around the pool.</p>
+          <p class="service-blurb">Built and finished, with the carpentry-grade detail most pool guys skip. Ask for the gallery.</p>
         </div>
 
         <div class="service-card">
@@ -1015,18 +1015,18 @@ main { padding-top: 72px; }
     </div>
   </section>
 
-  <!-- POOL DECKS FEATURE -->
+  <!-- FINISH CARPENTRY FEATURE (re-authored 2026-05-03 post-audit) -->
   <section class="pool">
     <div class="container">
       <div class="pool-grid">
         <div>
           <div class="pool-image"></div>
-          <p class="pool-caption">Diane Bennett's pool deck. Ocala, 2026.</p>
+          <p class="pool-caption">Pergola, Ocala. Finished detail.</p>
         </div>
         <div>
           <div class="section-eyebrow">Finish Carpentry</div>
-          <h2 class="section-headline">Pool decks built like furniture.</h2>
-          <p class="pool-body">Most pool decks get framed, screwed down, and called done. Anthony sanded every edge. He cut the curve around the pool to match the coping. Diane Bennett got three other quotes before she called him; his came in fair and the work came in furniture-grade.</p>
+          <h2 class="section-headline">Finish carpentry, not just framing.</h2>
+          <p class="pool-body">Most handymen frame it, screw it down, call it done. Anthony sands the edges. He cuts curves to match the coping. He notches around what's already there instead of trimming around it. Diane Bennett got three other quotes before she called him; his came in fair and the work came in furniture-grade.</p>
 
           <div class="pool-quote">
             <p class="pool-quote-text">"He sanded all the edges and cut a curve around the pool. The price was fair. I had three other quotes."</p>
