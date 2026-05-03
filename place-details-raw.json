@@ -1,0 +1,435 @@
+{
+  "id": "ChIJd58JVcXT54gRPqTCoeHtDXA",
+  "types": [
+    "general_contractor",
+    "service",
+    "point_of_interest",
+    "establishment"
+  ],
+  "nationalPhoneNumber": "(239) 867-8447",
+  "internationalPhoneNumber": "+1 239-867-8447",
+  "formattedAddress": "6726 Cherry Rd, Ocala, FL 34472, USA",
+  "addressComponents": [
+    {
+      "longText": "6726",
+      "shortText": "6726",
+      "types": [
+        "street_number"
+      ],
+      "languageCode": "en-US"
+    },
+    {
+      "longText": "Cherry Road",
+      "shortText": "Cherry Rd",
+      "types": [
+        "route"
+      ],
+      "languageCode": "en"
+    },
+    {
+      "longText": "Ocala",
+      "shortText": "Ocala",
+      "types": [
+        "locality",
+        "political"
+      ],
+      "languageCode": "en"
+    },
+    {
+      "longText": "Marion County",
+      "shortText": "Marion County",
+      "types": [
+        "administrative_area_level_2",
+        "political"
+      ],
+      "languageCode": "en"
+    },
+    {
+      "longText": "Florida",
+      "shortText": "FL",
+      "types": [
+        "administrative_area_level_1",
+        "political"
+      ],
+      "languageCode": "en"
+    },
+    {
+      "longText": "United States",
+      "shortText": "US",
+      "types": [
+        "country",
+        "political"
+      ],
+      "languageCode": "en"
+    },
+    {
+      "longText": "34472",
+      "shortText": "34472",
+      "types": [
+        "postal_code"
+      ],
+      "languageCode": "en-US"
+    }
+  ],
+  "location": {
+    "latitude": 29.1631233,
+    "longitude": -82.0414476
+  },
+  "rating": 4.9,
+  "googleMapsUri": "https://maps.google.com/?cid=8074371260282479678&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+  "regularOpeningHours": {
+    "openNow": false,
+    "periods": [
+      {
+        "open": {
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "close": {
+          "day": 1,
+          "hour": 17,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 2,
+          "hour": 8,
+          "minute": 0
+        },
+        "close": {
+          "day": 2,
+          "hour": 17,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 8,
+          "minute": 0
+        },
+        "close": {
+          "day": 3,
+          "hour": 17,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 8,
+          "minute": 0
+        },
+        "close": {
+          "day": 4,
+          "hour": 17,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 8,
+          "minute": 0
+        },
+        "close": {
+          "day": 5,
+          "hour": 17,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "hour": 9,
+          "minute": 0
+        },
+        "close": {
+          "day": 6,
+          "hour": 17,
+          "minute": 0
+        }
+      }
+    ],
+    "weekdayDescriptions": [
+      "Monday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Tuesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Wednesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Thursday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Friday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Saturday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Sunday: Closed"
+    ],
+    "nextOpenTime": "2026-05-04T12:00:00Z"
+  },
+  "businessStatus": "OPERATIONAL",
+  "userRatingCount": 45,
+  "displayName": {
+    "text": "THE YANKEE HANDYMAN LLC.",
+    "languageCode": "en"
+  },
+  "primaryTypeDisplayName": {
+    "text": "General Contractor",
+    "languageCode": "en-US"
+  },
+  "currentOpeningHours": {
+    "openNow": false,
+    "periods": [
+      {
+        "open": {
+          "day": 1,
+          "hour": 8,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 4
+          }
+        },
+        "close": {
+          "day": 1,
+          "hour": 17,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 4
+          }
+        }
+      },
+      {
+        "open": {
+          "day": 2,
+          "hour": 8,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 5
+          }
+        },
+        "close": {
+          "day": 2,
+          "hour": 17,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 5
+          }
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 8,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 6
+          }
+        },
+        "close": {
+          "day": 3,
+          "hour": 17,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 6
+          }
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 8,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 7
+          }
+        },
+        "close": {
+          "day": 4,
+          "hour": 17,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 7
+          }
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 8,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 8
+          }
+        },
+        "close": {
+          "day": 5,
+          "hour": 17,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 8
+          }
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "hour": 9,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 9
+          }
+        },
+        "close": {
+          "day": 6,
+          "hour": 17,
+          "minute": 0,
+          "date": {
+            "year": 2026,
+            "month": 5,
+            "day": 9
+          }
+        }
+      }
+    ],
+    "weekdayDescriptions": [
+      "Monday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Tuesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Wednesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Thursday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Friday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Saturday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+      "Sunday: Closed"
+    ],
+    "nextOpenTime": "2026-05-04T12:00:00Z"
+  },
+  "primaryType": "general_contractor",
+  "reviews": [
+    {
+      "name": "places/ChIJd58JVcXT54gRPqTCoeHtDXA/reviews/Ci9DQUlRQUNvZENodHljRjlvT25kNFUwdGtaMHhKU0ZKWGJFbGlVekl0U2s1M2FtYxAB",
+      "relativePublishTimeDescription": "2 months ago",
+      "rating": 5,
+      "text": {
+        "text": "I used Anthony (The Yankee Handyman) to install a garbage disposal for me. I wanted it done ASAP, and Anthony was able to work me into his schedule the same day I called.\nI had contacted a few plumbers who quoted me $350\u2013$500! I was shocked and was never going to pay more for an installation than I paid for the actual disposal. Anthony was recommended by our Bellechase homeowners Facebook group, where we only allow the very best contractors to be added to the page, and he did not disappoint.\nHe took pity on me and squeezed me in at the end of his day. He did a great job and his price was phenomenal\u2014I only paid $125, which is his standard service fee. I recommend him 100%. He even cleaned up after himself and took the old disposal away. As we all know, that\u2019s not usually the case with contractors, as I\u2019ve often been left with a mess after a job is done.",
+        "languageCode": "en"
+      },
+      "originalText": {
+        "text": "I used Anthony (The Yankee Handyman) to install a garbage disposal for me. I wanted it done ASAP, and Anthony was able to work me into his schedule the same day I called.\nI had contacted a few plumbers who quoted me $350\u2013$500! I was shocked and was never going to pay more for an installation than I paid for the actual disposal. Anthony was recommended by our Bellechase homeowners Facebook group, where we only allow the very best contractors to be added to the page, and he did not disappoint.\nHe took pity on me and squeezed me in at the end of his day. He did a great job and his price was phenomenal\u2014I only paid $125, which is his standard service fee. I recommend him 100%. He even cleaned up after himself and took the old disposal away. As we all know, that\u2019s not usually the case with contractors, as I\u2019ve often been left with a mess after a job is done.",
+        "languageCode": "en"
+      },
+      "authorAttribution": {
+        "displayName": "Cheryl Mulhern",
+        "uri": "https://www.google.com/maps/contrib/110393757922406208258/reviews",
+        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXzUeI166sHy2pqjNaCspgbg5l589TifMMWlVMXI8veDZZfB0Gu=s128-c0x00000000-cc-rp-mo-ba3"
+      },
+      "publishTime": "2026-02-23T19:08:46.520416585Z",
+      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25kNFUwdGtaMHhKU0ZKWGJFbGlVekl0U2s1M2FtYxAB&d=17924085&t=1",
+      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kNFUwdGtaMHhKU0ZKWGJFbGlVekl0U2s1M2FtYxAB!2m1!1s0x88e7d3c555099f77:0x700dede1a1c2a43e"
+    },
+    {
+      "name": "places/ChIJd58JVcXT54gRPqTCoeHtDXA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pObWRFSk9lWGhGWVhkQlRVNHhNM0JFVERWQlNIYxAB",
+      "relativePublishTimeDescription": "9 months ago",
+      "rating": 5,
+      "text": {
+        "text": "We highly recommend Yankee Handyman, he recently finished enclosing our porch as well as adding an interior wall to another room. They did a great job and made a big difference in our home. Also re-tiled another room for us. Really cares about his work. Will use him again when needed. 5 star rated for a reason!",
+        "languageCode": "en"
+      },
+      "originalText": {
+        "text": "We highly recommend Yankee Handyman, he recently finished enclosing our porch as well as adding an interior wall to another room. They did a great job and made a big difference in our home. Also re-tiled another room for us. Really cares about his work. Will use him again when needed. 5 star rated for a reason!",
+        "languageCode": "en"
+      },
+      "authorAttribution": {
+        "displayName": "Cole Spires",
+        "uri": "https://www.google.com/maps/contrib/109288919746780103287/reviews",
+        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLeL6xn_4g1jbRp5Ly3iJ-43o_GBDNmG4AUhMWjyAQoeBihxQ=s128-c0x00000000-cc-rp-mo"
+      },
+      "publishTime": "2025-07-26T12:57:51.549868715Z",
+      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pObWRFSk9lWGhGWVhkQlRVNHhNM0JFVERWQlNIYxAB&d=17924085&t=1",
+      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pObWRFSk9lWGhGWVhkQlRVNHhNM0JFVERWQlNIYxAB!2m1!1s0x88e7d3c555099f77:0x700dede1a1c2a43e"
+    },
+    {
+      "name": "places/ChIJd58JVcXT54gRPqTCoeHtDXA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tkNWIydEtXWFp4TUd0T1NHZFNTamx0UWtKQk1HYxAB",
+      "relativePublishTimeDescription": "3 months ago",
+      "rating": 5,
+      "text": {
+        "text": "Did excellent work creating a new circuit and hanging a chandelier for our kitchen. High quality work, professional, showed up on time, and him and his team worked together as a dynamic duo.",
+        "languageCode": "en"
+      },
+      "originalText": {
+        "text": "Did excellent work creating a new circuit and hanging a chandelier for our kitchen. High quality work, professional, showed up on time, and him and his team worked together as a dynamic duo.",
+        "languageCode": "en"
+      },
+      "authorAttribution": {
+        "displayName": "Molly Groves",
+        "uri": "https://www.google.com/maps/contrib/108063042008575995202/reviews",
+        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWWa4ig-9RafXP9vW7ss0F62E_ei0pTlywklwpMcutIaatxHUY=s128-c0x00000000-cc-rp-mo"
+      },
+      "publishTime": "2026-01-14T00:28:24.069894646Z",
+      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tkNWIydEtXWFp4TUd0T1NHZFNTamx0UWtKQk1HYxAB&d=17924085&t=1",
+      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkNWIydEtXWFp4TUd0T1NHZFNTamx0UWtKQk1HYxAB!2m1!1s0x88e7d3c555099f77:0x700dede1a1c2a43e"
+    },
+    {
+      "name": "places/ChIJd58JVcXT54gRPqTCoeHtDXA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2s5SWJFbGpOMkZpT0hoTlYxY3RjbVF4VjFKRWJFRRAB",
+      "relativePublishTimeDescription": "2 months ago",
+      "rating": 5,
+      "text": {
+        "text": "Anthony is amazing! He goes above and beyond in every job he does, he has done probably over 20 projects for me and every single time he\u2019s done great work at an extremely reasonable price! Highly recommended!",
+        "languageCode": "en"
+      },
+      "originalText": {
+        "text": "Anthony is amazing! He goes above and beyond in every job he does, he has done probably over 20 projects for me and every single time he\u2019s done great work at an extremely reasonable price! Highly recommended!",
+        "languageCode": "en"
+      },
+      "authorAttribution": {
+        "displayName": "Andrew Abad",
+        "uri": "https://www.google.com/maps/contrib/106510575509753976606/reviews",
+        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXrHrtZzHZle5QytsUox8WMBiLz9SWE4QOj138arGrtHqORvdo=s128-c0x00000000-cc-rp-mo"
+      },
+      "publishTime": "2026-02-21T14:26:37.904939310Z",
+      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2s5SWJFbGpOMkZpT0hoTlYxY3RjbVF4VjFKRWJFRRAB&d=17924085&t=1",
+      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5SWJFbGpOMkZpT0hoTlYxY3RjbVF4VjFKRWJFRRAB!2m1!1s0x88e7d3c555099f77:0x700dede1a1c2a43e"
+    },
+    {
+      "name": "places/ChIJd58JVcXT54gRPqTCoeHtDXA/reviews/Ci9DQUlRQUNvZENodHljRjlvT200eVVYVmpXRll4TWxGaWJXbElUbmRyTVVKbmNtYxAB",
+      "relativePublishTimeDescription": "2 months ago",
+      "rating": 5,
+      "text": {
+        "text": "We have been working with Anthony for several years and can not recommend him highly enough. He does excellent work, he is honest & reliable. You will not be disappointed!",
+        "languageCode": "en"
+      },
+      "originalText": {
+        "text": "We have been working with Anthony for several years and can not recommend him highly enough. He does excellent work, he is honest & reliable. You will not be disappointed!",
+        "languageCode": "en"
+      },
+      "authorAttribution": {
+        "displayName": "audrey bittman",
+        "uri": "https://www.google.com/maps/contrib/110049084672279754519/reviews",
+        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocI6XifUQ5ZJdLjWmsFcYn-bTsNAb3P3lDUZoIc0YIqOAU95LQ=s128-c0x00000000-cc-rp-mo-ba2"
+      },
+      "publishTime": "2026-02-23T18:07:14.024932584Z",
+      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT200eVVYVmpXRll4TWxGaWJXbElUbmRyTVVKbmNtYxAB&d=17924085&t=1",
+      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT200eVVYVmpXRll4TWxGaWJXbElUbmRyTVVKbmNtYxAB!2m1!1s0x88e7d3c555099f77:0x700dede1a1c2a43e"
+    }
+  ],
+  "accessibilityOptions": {
+    "wheelchairAccessibleParking": true
+  }
+}
