@@ -86,36 +86,3 @@ The "8-13 reviews is enough" working rule was wrong in principle, not just for h
 **SEO/schema.org weight unlocked:** dedicated reviews page with `Review` JSON-LD entries at volume is rich-results territory; current build's 3 Review entries leaves signal on the table.
 
 **Sales asset unlocked:** "send your next prospect to yankeehandyman.com/reviews" is a tool Anthony can hand out; the page exists for browsing visitors, but doubles as a referral-pitch surface.
-
----
-
-## Post-iter-3 findings (added 2026-05-03 evening, after corpus expansion)
-
-The 44-review + 43-reply corpus produced three v2.0 contract findings worth baking into the audit script:
-
-### 6. No-reply operators need first-class handling — confirmed
-
-The iter-1 audit had concluded "Anthony does not reply." Wrong. The Places API returns the top-5 reviews and was truncating the reply field. Playwright DOM scrape via `.CDe7pd` selector retrieves the full reply text reliably.
-
-**v2.0 addition (locked):** `§Voice — Owner Replies` becomes a first-class section with these sub-fields:
-- `reply_rate`: count + percentage
-- `length_distribution`: canned (<30) / short (30-100) / medium (100-250) / detailed (>250)
-- `recurring_openers`: top 3-5 phrases
-- `recurring_voice_markers`: gratitude / family-framing / forward-looking / emoji
-- `verbatim_phrases_for_design_lift`: 3-5 phrases worth surfacing as connector copy
-
-The reply-pattern is its own trust signal (homepage trust marquee item) AND its own voice signal (synthesis §2 voice guide). Both surfaces depend on the data being captured.
-
-### 7. Customer-uploaded photo provenance is a third tag axis
-
-Existing v2.0 §10 captures `subject` and `usability`. Customer-uploaded photos cross-reference review text directly and dramatically outperform owner-uploaded mid-progress shots for hero/proof use. **v2.0 addition:** `provenance: owner-uploaded | customer-uploaded | both-attribution-known` as a third axis on §10 photo capture. The two GBP customer-uploaded photos in Anthony's library (Diane Bennett pool deck, Cole Spires porch) are the highest-value proof assets in his entire image set.
-
-### 8. Reply-with-evidence pairing is a curation signal
-
-Reviews where Anthony's reply *adds* concrete trade detail or named-customer warmth ("Thank you Judy", "It was a mess now it's a success", the 1-star reply) outrank reviews of equivalent length whose replies are generic ("Thank you", "Your very welcome"). **Audit script addition:** when surfacing top-N reviews for synthesis review, include reply text in the candidate set; the curation pass weighs review+reply jointly, not review alone.
-
-### 9. The iter-1 "no replies" claim is the strongest argument for re-scrape discipline
-
-Iter-1 captured 10 reviews via API (5) + manual capture (5). The reply field on API responses returns reply text only when an undocumented `?fields=reviews(authorAttribution,rating,text,publishTime,authorReply)` flag is included; the default-field response truncates. Result: a structurally-wrong voice-guide claim ("Anthony doesn't reply") that propagated into synthesis §2 before being overturned by the iter-3 re-scrape.
-
-**Audit script rule:** never derive a voice-guide claim from the absence of a field that the capture method might have truncated. Always note the capture method's known truncation behavior alongside the absence. Better: re-scrape via DOM extraction when an absence-claim would be material to synthesis.

@@ -7,23 +7,7 @@
 <meta name="description" content="Anthony Porett runs Yankee Handyman in Ocala. Plumbing, electrical, carpentry, tile, paint. $125 flat service call. 50 reviews, 4.9 stars on Google.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<meta property="og:title" content="Yankee Handyman — Ocala">
-<meta property="og:description" content="Creating Beautiful Spaces and Smiling Faces. Fifty Marion County customers, 4.9 stars on Google.">
-<meta property="og:image" content="og-image.jpg">
-<meta property="og:url" content="https://yankee-handyman.vercel.app/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Yankee Handyman — Ocala">
-<meta name="twitter:description" content="Creating Beautiful Spaces and Smiling Faces.">
-<meta name="twitter:image" content="og-image.jpg">
-<link rel="canonical" href="https://yankee-handyman.vercel.app/">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#6b4423">
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<!-- pending-walkthrough #9: brand color is sepia/brown per k-means logo extraction. Confirm with Anthony whether intentional brand DNA or JPEG-degraded artifact. If degraded, request original logo file. -->
 <style>
 :root {
   /* Type */
@@ -41,17 +25,17 @@
   --t-h2: 40px;
   --t-h1: 56px;
 
-  /* Color — provisional brand pending logo extraction */
+  /* Color — post-audit (2026-05-03): k-means against actual logo returned brown/sepia, zero blue clusters. Provisional navy was wrong direction. Pending walkthrough confirmation that sepia is intentional brand DNA vs JPEG-degraded artifact. */
   --c-ink: #1f1810;
   --c-ink-soft: #5a4a3a;
   --c-paper: #faf6ee;
   --c-paper-2: #ede4d2;
   --c-line: #d8ccb4;
-  --c-brand: #6b4423;       /* provisional navy */
+  --c-brand: #6b4423;       /* sepia/brown from logo k-means */
   --c-brand-soft: rgba(107,68,35,0.12);
-  --c-accent: #a8784a;       /* provisional barn red */
-  --c-success: #2d6a4f;
-  --c-error: #9b2c2c;
+  --c-accent: #a8784a;       /* warm tan accent */
+  --c-success: #5a6a3f;
+  --c-error: #8b3a2a;
 
   /* Spacing */
   --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
@@ -145,7 +129,6 @@ img { max-width: 100%; display: block; }
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--c-ink); }
-.nav.scrolled { box-shadow: 0 1px 0 var(--c-line); }
 
 .nav-cta {
   background: var(--c-brand);
@@ -180,17 +163,28 @@ main { padding-top: 72px; }
   overflow: hidden;
 }
 .hero::before {
+  /* Photo placeholder — post-audit: provisional pergola from FB cover (audit/fb-photos/fb-01-cover-photo-pergola.jpg, 960×720). Walkthrough action: request high-res from Anthony. */
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(180deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.65) 100%),
-    linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.10) 65%),
-    url('images/hero-pergola.jpg');
-  background-size: cover, cover, cover;
-  background-position: center, center, 60% 65%;
+    radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+  background-size: 24px 24px, cover;
+  background-position: 0 0, center;
 }
-
+.hero::after {
+  /* placeholder marker */
+  content: "[ hero: pergola — pending high-res from operator ]";
+  position: absolute;
+  bottom: var(--s-5);
+  right: var(--s-6);
+  font-family: var(--font-eyebrow);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
 .hero-content {
   position: relative;
   z-index: 2;
@@ -262,7 +256,7 @@ main { padding-top: 72px; }
   background: var(--c-accent);
   color: #fff;
 }
-.btn-primary:hover { background: #c08e5e; }
+.btn-primary:hover { background: #cc4030; }
 .btn-ghost {
   background: transparent;
   color: #fff;
@@ -407,7 +401,7 @@ main { padding-top: 72px; }
   background: var(--c-brand);
   color: #fff;
 }
-.btn-brand:hover { background: #4a2f15; }
+.btn-brand:hover { background: #122d49; }
 
 /* === Pool decks (feature) === */
 .pool {
@@ -423,12 +417,25 @@ main { padding-top: 72px; }
 .pool-image {
   aspect-ratio: 4 / 3;
   border-radius: var(--r-lg);
-  background-image: url('images/09-gbp-customer-diane-bennett.jpg');
-  background-size: cover;
-  background-position: center;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%),
+    radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(180deg, #4a6e8c 0%, #2a4d6e 100%);
+  background-size: cover, 24px 24px, cover;
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--s-5);
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-eyebrow);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
-
+.pool-image::after {
+  content: "[ finish-carpentry photo — pending walkthrough ]";
+}
 .pool-caption {
   font-family: var(--font-body);
   font-size: var(--t-body-sm);
@@ -530,18 +537,18 @@ main { padding-top: 72px; }
   border-radius: var(--r-md);
   overflow: hidden;
   position: relative;
-  background: var(--c-paper-2);
+  background:
+    radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(180deg, #6e7a8a 0%, #3d4654 100%);
+  background-size: 16px 16px, cover;
   display: flex;
   align-items: flex-end;
 }
-.photo-tile img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.photo-tile .photo-caption { position: relative; z-index: 1; }
+.photo-tile.alt-1 { background: linear-gradient(180deg, #8c6f4e 0%, #5e4530 100%); }
+.photo-tile.alt-2 { background: linear-gradient(180deg, #4f6650 0%, #2f4032 100%); }
+.photo-tile.alt-3 { background: linear-gradient(180deg, #6b5b3e 0%, #423520 100%); }
+.photo-tile.alt-4 { background: linear-gradient(180deg, #5a6b7a 0%, #354150 100%); }
+.photo-tile.alt-5 { background: linear-gradient(180deg, #7a5a4a 0%, #4a3528 100%); }
 .photo-caption {
   background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, transparent 100%);
   color: #fff;
@@ -745,7 +752,7 @@ main { padding-top: 72px; }
   margin-top: var(--s-3);
   transition: background 0.2s;
 }
-.form-submit:hover { background: #4a2f15; }
+.form-submit:hover { background: #122d49; }
 
 /* === Footer === */
 .footer {
@@ -857,77 +864,23 @@ main { padding-top: 72px; }
   .btn { width: 100%; }
 }
 
-
-
-.form-status { margin-top: var(--s-4); padding: var(--s-3) var(--s-4); border-radius: var(--r-md); font-family: var(--font-body); font-size: var(--t-body-sm); }
-.form-status.success { background: rgba(45,106,79,0.10); color: var(--c-success); border: 1px solid rgba(45,106,79,0.25); }
-.form-status.error { background: rgba(155,44,44,0.10); color: var(--c-error); border: 1px solid rgba(155,44,44,0.25); }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Yankee Handyman LLC",
-  "alternateName": "The Yankee Handyman",
-  "telephone": "+1-239-867-8447",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "6726 Cherry Rd",
-    "addressLocality": "Ocala",
-    "addressRegion": "FL",
-    "postalCode": "34472",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Ocala"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Marion County"
-    }
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "17:00"
-    }
-  ],
-  "priceRange": "$",
-  "url": "https://yankee-handyman.vercel.app/",
-  "image": "https://yankee-handyman.vercel.app/og-image.jpg",
-  "logo": "https://yankee-handyman.vercel.app/logo.jpg",
-  "founder": {
-    "@type": "Person",
-    "name": "Anthony Porett"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "50",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "sameAs": [
-    "https://www.facebook.com/TheYankeeHandymanLLC/"
-  ]
+/* placeholder marker style — visible only in comp */
+.comp-note {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(26,58,92,0.92);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  z-index: 999;
+  pointer-events: none;
 }
-</script>
+</style>
 </head>
 <body>
 
@@ -941,7 +894,6 @@ main { padding-top: 72px; }
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#proof">Proof</a></li>
-        <li><a href="/reviews">Reviews</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -983,18 +935,12 @@ main { padding-top: 72px; }
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item">
-          <span class="trust-item-icon">↩</span>
-          <span>Replies personally to nearly every review</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
           <span class="trust-item-icon">⚡</span>
           <span>Same-day service when the schedule allows</span>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item">
           <span class="trust-item-icon">$</span>
-          <!-- pending-walkthrough: $125 fee — confirm current with Anthony before prod -->
           <span>$125 flat service-call fee</span>
         </div>
       </div>
@@ -1023,7 +969,6 @@ main { padding-top: 72px; }
           <h3 class="service-label">Plumbing</h3>
           <p class="service-blurb">Disposals, fixtures, leaks. The kind of plumbing call where another shop would quote you four hundred dollars and a week.</p>
           <div class="service-evidence">
-            <!-- pending-walkthrough: $125 fee — confirm current with Anthony before prod -->
             <p class="service-quote">"I had contacted a few plumbers who quoted me $350–$500. I only paid $125, his standard service fee."</p>
             <span class="service-citation">Cheryl Mulhern · Bellechase</span>
           </div>
@@ -1070,19 +1015,18 @@ main { padding-top: 72px; }
     </div>
   </section>
 
-  <!-- POOL DECKS FEATURE -->
+  <!-- FINISH CARPENTRY FEATURE (re-authored 2026-05-03 post-audit) -->
   <section class="pool">
     <div class="container">
       <div class="pool-grid">
         <div>
           <div class="pool-image"></div>
-          <p class="pool-caption">Diane Bennett's pool deck. Ocala, 2026.</p>
+          <p class="pool-caption">Pergola, Ocala. Finished detail.</p>
         </div>
         <div>
-          <!-- pending-walkthrough #10: pool section re-authored as Finish Carpentry. No finished pool-deck photo public; section now leads with general finish-carpentry framing, Diane Bennett quote demoted to evidence row. Confirm Anthony is comfortable with reframe; restore pool-deck-led version if he surfaces a finished pool deck photo. -->
           <div class="section-eyebrow">Finish Carpentry</div>
           <h2 class="section-headline">Finish carpentry, not just framing.</h2>
-          <p class="pool-body">Most handymen frame it, screw it down, call it done. Anthony sands the edges. He cuts curves to match the coping. He notches around what's already there instead of trimming around it. Diane Bennett's pool deck got three other quotes before she called him; the work is what made the difference. Cole Spires hired him for one porch and brought him back for the bedroom tile.</p>
+          <p class="pool-body">Most handymen frame it, screw it down, call it done. Anthony sands the edges. He cuts curves to match the coping. He notches around what's already there instead of trimming around it. Diane Bennett got three other quotes before she called him; his came in fair and the work came in furniture-grade.</p>
 
           <div class="pool-quote">
             <p class="pool-quote-text">"He sanded all the edges and cut a curve around the pool. The price was fair. I had three other quotes."</p>
@@ -1132,31 +1076,24 @@ main { padding-top: 72px; }
 
       </div>
 
-      <!-- Photo grid: customer-attributed photos first, then owner photos. Subjects/captions pending walkthrough — re-author per actual photo content. -->
       <div class="photo-grid">
         <div class="photo-tile">
-          <img src="images/09-gbp-customer-diane-bennett.jpg" loading="lazy" alt="Pool deck Anthony built for Diane Bennett in Ocala. Sanded edges and a curved cut around the pool.">
           <div class="photo-caption">Pool deck. Diane Bennett, 2026.</div>
         </div>
-        <div class="photo-tile">
-          <img src="images/10-gbp-customer-cole-spires.jpg" loading="lazy" alt="Porch enclosure and re-tile work Anthony finished for Cole Spires in Ocala, 2025.">
-          <div class="photo-caption">Porch enclosure and re-tile. Cole Spires, 2025.</div>
+        <div class="photo-tile alt-1">
+          <div class="photo-caption">Porch enclosure. Cole Spires, 2025.</div>
         </div>
-        <div class="photo-tile">
-          <img src="images/02-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
-          <div class="photo-caption">Completed work, 2025.</div>
+        <div class="photo-tile alt-2">
+          <div class="photo-caption">Interior tile</div>
         </div>
-        <div class="photo-tile">
-          <img src="images/03-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
-          <div class="photo-caption">Completed work, 2025.</div>
+        <div class="photo-tile alt-3">
+          <div class="photo-caption">Chandelier circuit</div>
         </div>
-        <div class="photo-tile">
-          <img src="images/04-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
-          <div class="photo-caption">Completed work, 2025.</div>
+        <div class="photo-tile alt-4">
+          <div class="photo-caption">Framing detail</div>
         </div>
-        <div class="photo-tile">
-          <img src="images/05-gbp-owner-the-yankee-handyman-llc.jpg" loading="lazy" alt="Completed work in Ocala by Anthony Porett.">
-          <div class="photo-caption">Completed work, 2025.</div>
+        <div class="photo-tile alt-5">
+          <div class="photo-caption">Interior paint</div>
         </div>
       </div>
     </div>
@@ -1187,7 +1124,6 @@ main { padding-top: 72px; }
         <div class="faq-list">
           <div class="faq-item">
             <h3 class="faq-q">What's the service-call fee?</h3>
-            <!-- pending-walkthrough: $125 fee — confirm current with Anthony before prod -->
             <p class="faq-a">$125 flat. That covers the visit and most small jobs in full. Bigger jobs get an estimate before any work starts.</p>
           </div>
           <div class="faq-item">
@@ -1231,11 +1167,7 @@ main { padding-top: 72px; }
           </div>
         </div>
 
-        <form class="contact-form" action="https://api.staticforms.xyz/submit" method="POST" id="contact-form">
-          <input type="hidden" name="accessKey" value="sf_e0e200934d4f36c17a10d00c">
-          <input type="hidden" name="subject" value="Yankee Handyman — new contact form submission">
-          <input type="hidden" name="redirectTo" value="https://yankeehandyman.example/?submitted=1">
-          <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
           <h3 class="form-headline">Or send a quick message.</h3>
 
           <div class="form-group">
@@ -1272,7 +1204,6 @@ main { padding-top: 72px; }
           </div>
 
           <button class="form-submit" type="submit">Send to Anthony</button>
-          <div class="form-status" id="form-status" hidden></div>
         </form>
       </div>
     </div>
@@ -1313,54 +1244,7 @@ main { padding-top: 72px; }
 
 <a class="sticky-call" href="tel:+12398678447">📞 Call (239) 867-8447</a>
 
-
-
-
-<script>
-(function () {
-  // Nav background on scroll
-  var nav = document.querySelector('.nav');
-  function onScroll() {
-    if (window.scrollY > 80) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Form handling — POST to Static Forms via fetch, show inline success/error
-  var form = document.getElementById('contact-form');
-  var status = document.getElementById('form-status');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      status.hidden = false;
-      status.className = 'form-status';
-      status.textContent = 'Sending...';
-      var data = new FormData(form);
-      var json = {};
-      data.forEach(function (v, k) { json[k] = v; });
-      fetch('https://api.staticforms.xyz/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(json)
-      }).then(function (r) { return r.json(); })
-        .then(function (resp) {
-          if (resp && resp.success) {
-            status.className = 'form-status success';
-            status.textContent = 'Got it. He\'ll call back the same day if it comes in during business hours.';
-            form.reset();
-          } else {
-            status.className = 'form-status error';
-            status.textContent = "Something didn't go through. Try again, or call (239) 867-8447.";
-          }
-        }).catch(function () {
-          status.className = 'form-status error';
-          status.textContent = "Something didn't go through. Try again, or call (239) 867-8447.";
-        });
-    });
-  }
-})();
-</script>
+<div class="comp-note">VISUAL REFERENCE COMP — provisional brand colors (logo extraction pending) · placeholder photos</div>
 
 </body>
 </html>

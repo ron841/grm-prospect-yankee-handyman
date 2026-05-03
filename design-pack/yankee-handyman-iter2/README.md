@@ -1,12 +1,10 @@
 # Yankee Handyman LLC — Build Pack
 
-> Two-page site for Anthony Porett's handyman business in Ocala, FL: homepage (single-scroll brochure) + dedicated `/reviews` page. This pack contains every artifact Code needs to build both pages, plus the upstream synthesis trail Chat needs for client conversations.
+> Single-page brochure site for Anthony Porett's handyman business in Ocala, FL. This pack contains every artifact Code needs to build the site, plus the upstream synthesis trail Chat needs for client conversations.
 >
-> **Iteration 3** (2026-05-03) adds the `/reviews` page. Built on the iter-2 corpus expansion (44 reviews + 43 owner replies, scraped from GBP) plus iter-2 audit findings already absorbed.
+> **If you are Code:** start with this README, then read `BUILD-DECISIONS.md`, then `slots.md`. Refer to `content-inventory.md` for any string. Refer to `Home.html` for visual target.
 >
-> **If you are Code:** start with this README, then read `BUILD-DECISIONS.md`, then `slots.md` (homepage) and `reviews-slots.md` (reviews page). Refer to `content-inventory.md` and `reviews-content-inventory.md` for strings. Refer to `Home.html` for homepage visual target.
->
-> **If you are Chat:** start here, then read `synthesis.md` + `reviews-synthesis.md` for the strategic argument and `intake.md` for the raw evidence base.
+> **If you are Chat:** start here, then read `synthesis.md` for the strategic argument and `intake.md` for the raw evidence base.
 
 ---
 
@@ -18,24 +16,21 @@
 |---|---|---|
 | 1 | `README.md` | This file. Pack overview, open decisions, build sequence. |
 | 2 | `BUILD-DECISIONS.md` | Hosting, fonts, forms, analytics, schema.org. The technical contract. |
-| 3 | `slots.md` | Homepage layout spec. Type, color, spacing tokens (canonical for both pages). |
-| 4 | `reviews-slots.md` | Reviews-page layout spec. Inherits tokens from `slots.md`. |
-| 5 | `content-inventory.md` | Every string the homepage build needs. |
-| 6 | `reviews-content-inventory.md` | Every string the reviews page build needs. |
-| 7 | `Home.html` | Homepage visual reference comp. |
-| 8 | `synthesis.md`, `reviews-synthesis.md` | Optional. The reasoning behind any SLOT decision. |
-| 9 | `intake.md` | Reference only. Raw evidence behind every committed line. |
+| 3 | `slots.md` | Section-by-section layout spec. Type, color, spacing tokens. The build manual. |
+| 4 | `content-inventory.md` | Every string the build needs. Cite from this — never re-author. |
+| 5 | `Home.html` | Visual reference comp. The look-and-feel target. |
+| 6 | `synthesis.md` | Optional. Read if a SLOT decision feels arbitrary — the reasoning is here. |
+| 7 | `intake.md` | Reference only. Raw evidence behind every committed line. |
 
 ### For Chat (account / client conversations)
 
 | Order | File | Why |
 |---|---|---|
 | 1 | `README.md` | This file. |
-| 2 | `synthesis.md` | Homepage strategy: voice, persona, section sequence, taglines. Walkthrough lead. |
-| 3 | `reviews-synthesis.md` | Reviews-page strategy: curation rules, the 1-star call, voice argument. |
-| 4 | `intake.md` | Raw evidence by section. Cite review numbers, FB tagline, etc., back to client. |
-| 5 | `intake-template.md` | The v2.0 contract spec. Reference for next prospect. |
-| 6 | `audit-script-implications.md` | Internal note for the intake-script design session. Skip for client work. |
+| 2 | `synthesis.md` | The strategic argument: voice, persona, section sequence, taglines. Use this in walkthrough. |
+| 3 | `intake.md` | Raw evidence by section. Cite review numbers, FB tagline, etc., back to client. |
+| 4 | `intake-template.md` | The v2.0 contract spec. Reference for next prospect. |
+| 5 | `audit-script-implications.md` | Internal note for the intake-script design session. Skip for client work. |
 
 ### Internal-only (not for Code, not for client)
 
@@ -54,17 +49,10 @@ yankee-handyman/
 ├── intake-template.md                  ← v2.0 spec (preserved for reference)
 ├── audit-script-implications.md        ← internal note (intake-script design)
 ├── audit-bridge.md                     ← cross-ref to Code's audit (repo `audit/` folder)
-│
-│   ── HOMEPAGE ──
-├── synthesis.md                        ← homepage strategy
-├── content-inventory.md                ← homepage strings
-├── slots.md                            ← homepage layout spec (tokens canonical)
-├── Home.html                           ← homepage visual reference comp
-│
-│   ── REVIEWS PAGE (iter-3) ──
-├── reviews-synthesis.md                ← reviews-page strategy
-├── reviews-content-inventory.md        ← reviews-page strings (44 reviews + 43 replies)
-└── reviews-slots.md                    ← reviews-page layout spec
+├── synthesis.md                        ← strategic decisions: voice, persona, section sequence
+├── content-inventory.md                ← every string the build needs
+├── slots.md                            ← section-by-section layout spec
+└── Home.html                           ← visual reference comp
 ```
 
 ---
@@ -131,28 +119,17 @@ If a real conflict surfaces, kick it back to design before inventing a resolutio
 
 ---
 
-## Iteration 3 (shipped — `/reviews` page)
+## Iteration 3 (queued — `/reviews` page)
 
-Anthony has 50 Google reviews at 4.9 stars; 44 carry body text; 43 carry owner replies. Homepage proof section uses 3 of them — right for the homepage container, wrong as the only surface. The dedicated reviews page lives at `/reviews`.
+Anthony has 50 Google reviews at 4.9 stars; the homepage proof section uses 3 of them. That ratio is wrong for a prospect whose strongest asset class is review evidence.
 
-**Iteration 3 deliverables (this pack):**
+**Iteration 3 sequence (locked at iteration-2 close):**
 
-1. ✅ **Corpus captured** — Code re-scraped GBP via Playwright, 25 scroll-load cycles, 44 reviews + 43 replies extracted. Saturation reached at #41 (job-nouns plateau at #38, praise-patterns at #41). `uploads/yankee-handyman-corpus-for-design.md`.
-2. ✅ **Three reviews-page docs authored:**
-   - `reviews-synthesis.md` — voice argument, curation rules, 1-star framing, 4-layer page structure (curated leads → 1-star → grouped → archive)
-   - `reviews-content-inventory.md` — every review/reply pair verbatim, 5 curated + 1 outlier + 31 grouped + 6 archive + Ju B in carpentry group = 44
-   - `reviews-slots.md` — layout spec inheriting homepage tokens; full card for curated leads, compact card for groups, list for archive
-3. ✅ **Homepage corrections (iter-1 finding overturned):**
-   - `synthesis.md §2` — "Anthony does not reply" claim corrected; reply pattern (43/44, brief warm register) is now positive voice signal
-   - `content-inventory.md` — trust marquee item 5a added: "Replies personally to nearly every review."
-4. **Code build queued:** `/reviews` page, nav link, `Review` JSON-LD scoped to the page (homepage keeps `aggregateRating` only).
+1. **Code re-runs review capture aggressively** — Birdeye pagination + Yelp + GBP "all reviews" panel via Playwright (same pattern as audit's FB photo scrape) + Google Places API + FB recommendations. Capture to evidence saturation (target 30-40 for Anthony; rule is "stop when marginal review adds zero new job-nouns and zero new praise-patterns"). Dedup by author + date + first 30 chars across sources. Updates `intake.md` with expanded review set.
+2. **Design authors** `reviews-synthesis.md`, `reviews-content-inventory.md`, `reviews-slots.md` for the new page. Three-layer structure: curated leads (3-5) → grouped by service-type (group-order driven by synthesis §3 job-noun frequency, within-group sort by length) → date-ordered archive. Specificity > generic praise; competitor-mention reviews surface prominently.
+3. **Code builds** `/reviews` page, adds nav link, scopes `Review` JSON-LD to the page (homepage retains `aggregateRating` only). Iteration-3 pack ships separately.
 
-Three key decisions (locked iter-3 open):
-- **The 1-star is included** with plain header, no editorial wrapper, equal visual weight to curated leads. Walkthrough confirms Anthony is comfortable surfacing it.
-- **The "we/I" oscillation in Anthony's replies is left as-is.** Forced consistency would falsify his voice.
-- **Pergola review (Ju B, 1-line) folds into the carpentry group** rather than getting its own header.
-
-Curation rules + capture rules locked in `audit-script-implications.md` §5 for the audit-skill v0.1 spec.
+Walkthrough with Anthony fits between iteration 2 and iteration 3 depending on what's ready. Curation rules + capture rules documented in `audit-script-implications.md` §5 for the audit-skill v0.1 spec.
 
 ---
 

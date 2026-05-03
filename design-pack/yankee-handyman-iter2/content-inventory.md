@@ -4,7 +4,7 @@
 >
 > **Voice authority:** GRM voice skill (Closing Table primary; Saturday Morning secondary; Front Porch tertiary). Synthesis-committed lines preserved verbatim. All `[microcopy-design]` strings authored against zone-to-voice mapping.
 >
-> **Persona:** Neighborhood steady (primary) with Quiet confidence (secondary). Anthony's evidence — Bellechase HOA referral, "honest & reliable" customer language, brief warm replies on 43/44 Google reviews ("Thank you for choosing us," family-framed, gratitude-first), repeat customers — reads warm-civic, not proof-forward or rescue-ready. Persona biases: hero subhead leans Saturday Morning; FAQ section header leans Saturday Morning lead-in; About + footer lean Front Porch.
+> **Persona:** Neighborhood steady (primary) with Quiet confidence (secondary). Anthony's evidence — Bellechase HOA referral, "honest & reliable" customer language, no review replies, repeat customers — reads warm-civic, not proof-forward or rescue-ready. Persona biases: hero subhead leans Saturday Morning; FAQ section header leans Saturday Morning lead-in; About + footer lean Front Porch.
 >
 > **Status legend per slot:** `committed` (synthesis-traced) · `microcopy-design` (authored fresh per voice rules) · `pending-walkthrough` (operator confirmation needed) · `pending-image-review` (photo selection deferred) · `pending-extraction` (mechanical extraction deferred to build, e.g. logo color)
 >
@@ -148,10 +148,9 @@
 
 > Per GRM zone map: trust marquee is Saturday Morning by default. Neighborhood steady persona keeps it Saturday Morning.
 
-### `trust_marquee.items` (5 items, scrolls or sits as a static row)
+### `trust_marquee.items` (4 items, scrolls or sits as a static row)
 1. **Value:** "50 Google reviews · 4.9 stars" — committed
 2. **Value:** "Recommended by the Bellechase homeowners group" — committed (synthesis §4 secondary trust, intake §Voice — Review 1 verbatim phrasing)
-2a. **Value:** "Replies personally to nearly every review." — **iter-3 add.** Citation: 44-review corpus, 43 replies. Voice: Saturday Morning (matches surrounding marquee items). Citation in synthesis §13 row 5a. The reply-pattern is its own trust signal; surface here.
 3. **Value:** "Same-day service when the schedule allows" — microcopy-design (Saturday Morning: practical specific, no "24/7" overclaim)
 4. **Value:** "$125 flat service-call fee" — microcopy-design (Saturday Morning: leads with the fact, no softening)
 - **Voice:** Saturday Morning (clean, informational, factual)
@@ -661,7 +660,7 @@ Each item:
 
 ## Appendix — voice/persona reasoning in one paragraph
 
-Anthony reads as **Neighborhood steady with secondary Quiet confidence.** He has the Bellechase HOA referral signal, "honest & reliable" customer language, brief warm replies on nearly every Google review (gratitude-first, family-framed, occasional emoji — not corporate, not effusive), and repeat-customer evidence — that's warm-civic, not proof-forward. Quiet confidence shows up in the services framing (he doesn't pad the list; the "general handyman + 6 named depths" shape says it without saying it). Persona resolves these zone biases:
+Anthony reads as **Neighborhood steady with secondary Quiet confidence.** He has the Bellechase HOA referral signal, "honest & reliable" customer language, no Google review replies (low-ego operator), and repeat-customer evidence — that's warm-civic, not proof-forward. Quiet confidence shows up in the services framing (he doesn't pad the list; the "general handyman + 6 named depths" shape says it without saying it). Persona resolves these zone biases:
 - Hero: subhead leans Saturday Morning, headline stays Closing Table (preserves the operator's tagline as committed)
 - Services grid header: biases to Closing Table per Quiet confidence
 - Trust marquee: stays Saturday Morning

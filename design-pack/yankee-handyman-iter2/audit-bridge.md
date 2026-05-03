@@ -55,29 +55,6 @@
 
 ---
 
-## Iteration 3 additions (2026-05-03 evening)
-
-Following the audit absorption above, the corpus was expanded (Playwright re-scrape of GBP, 25 scroll cycles → 44 reviews + 43 replies). This produced two material changes back to the homepage docs and three new reviews-page docs:
-
-| Doc | iter-3 change |
-|---|---|
-| `synthesis.md §2` | "Anthony does not reply" claim (iter-1) **corrected** — overturned by 43/44 reply rate. Replaced with reply-pattern voice signal (gratitude-first, brief, warm-family-framed). |
-| `synthesis.md §13` | Row 5a added: trust marquee reply line. |
-| `content-inventory.md trust_marquee.items` | Item 2a added: "Replies personally to nearly every review." Voice: Saturday Morning. |
-| `reviews-synthesis.md` | New — voice argument, curation rules, 1-star framing, 4-layer page structure. |
-| `reviews-content-inventory.md` | New — 44 review/reply pairs verbatim, organized: 5 curated + 1 outlier + 7 grouped sections + archive. |
-| `reviews-slots.md` | New — layout spec inheriting homepage tokens. |
-| `audit-script-implications.md §5` | (already locked at iter-2 close) curation rules + capture rules for audit-skill v0.1 spec. |
-| `README.md` | Pack contents diagram updated to show homepage/reviews split. Iter-3 section rewritten from "queued" to "shipped." |
-
-**Three iter-3 decisions worth flagging for walkthrough:**
-
-1. **The 1-star is in.** Plain header ("One 1-star review."), no editorial wrapper, equal visual weight to curated leads. Walkthrough should confirm Anthony is comfortable; default = ship.
-2. **Reply-pattern as homepage trust signal.** The 43/44 reply rate is its own asset; surfaced on the homepage trust marquee, not just on the reviews page.
-3. **Customer-uploaded photos + verbatim reviews =** the strongest hero/proof material. Iter-3 corpus confirms this is a v2.0 contract gap (proposed §10 sub-axis: `provenance: owner-uploaded | customer-uploaded | both`).
-
----
-
 ## What did NOT change (and why)
 
 - **Photo subject tagging** — still deferred to image-review at walkthrough. Audit confirmed the deferral was correct; vision-model auto-tagging at 70% accuracy is worse than useless per `audit-script-implications.md`.

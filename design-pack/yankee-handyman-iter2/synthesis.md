@@ -17,7 +17,7 @@
   - **Differentiator paragraph** — strict v2.0 blocks pending §12 competitor set (≥2 captured). Soft-pass: synthesized differentiators against an *implicit* category baseline ("contractors who don't clean up; plumbers charging $350-$500"), citing review evidence. Confidence: medium-high — review language explicitly invokes competitor comparisons, which is unusually strong for an implicit baseline. Risk if wrong: low — claims are review-cited not Design-invented.
   - **Job-noun frequency counts** — captured intake gives flat list, not `[noun, count]` pairs. Synthesized §3 services list orders by *cited review count* I can derive (1 review = 1 count) which is a weak proxy. Counts noted inline.
   - **Photo subject/usability tags** — Ron explicitly deferred to Design. Tagged in §10 below; tags are Design's call, marked `[design-tagged]` so they're distinguishable from operator-confirmed.
-  - **Owner-reply register shifts** — iter-3 corpus expansion captured 43 owner replies across 44 reviews. Pattern: brief, gratitude-first, warm-family-framed ("Thank you for choosing us," "appreciate the opportunity," occasional emoji). Treated as a voice-guide input in §2 and as a homepage trust signal in §13. (Iter-1 finding "Anthony does not reply" was a capture-method artifact, not reality — overturned post-corpus expansion.)
+  - **Owner-reply register shifts** — captured intake confirms the absence of replies across all 10 captured reviews. This is signal, not gap; treated as a voice-guide input in §2.
   - **Vernacular color evidence** — not separately captured; I'll extract from logo + photos in §7 below.
 
 ## 1. Tagline (committed)
@@ -43,14 +43,11 @@
   - *General contractor* — GBP category but reviews never use it; *handyman* is the customer-word.
   - *Trusted, professional, reliable* (alone) — generic; the site has stronger evidence-grounded language available, use that instead.
 - **Register shifts the site must perform:**
-  - **Anthony replies to nearly every review.** Iter-3 corpus (44 reviews, 43 replies) overturns the iter-1 finding. Reply-voice is gratitude-first, brief (8 canned <30 chars, 28 short 30-100 chars, 7 medium 100-250, 0 detailed), warm-family-framed ("being a part of the family", "It was my pleasure", "looking forward to more projects"). The site CAN lean on conversational owner-voice. Reply-pattern is *itself* a trust signal worth surfacing on the homepage (see §13 row 5a, trust marquee addition).
+  - **No reply-register evidence.** The owner does not reply to Google reviews (intake §Voice — Owner Replies). This is a real signal: the site cannot lean on conversational owner-voice the way it could for an operator who replies to every review. **Implication:** the site's owner-voice surface is small (tagline, About, contact framing). Customer voice surfaces (review excerpts, captioned proof) carry more weight than they would otherwise.
   - **One register shift required:** when copy describes pricing, the register firms up. The $125 flat fee is *the* hook; it should be stated plainly with no softening adjectives, in the operator's voice. Elsewhere copy can stay warm.
-  - **Authoring instinct cap:** the reply-length distribution caps Anthony's natural register at 100 chars. Synthesis-authored copy on the homepage and reviews page should match — default authoring instinct will be 150-200 char density; the data says cap tighter. Page should feel like Anthony's tempo, not a writer's prose around Anthony's quotes.
 - **Reading level target:** Grade 7. Customer reviews average ~grade 6-8; operator's tagline is grade 5; site copy should sit in the band.
 
 ## 3. Services (committed)
-
-> **Iter-3 update:** Job-noun frequency table from 44-review corpus replaces iter-1 inheritance ordering. Cleanup demoted from headline differentiator (only 2 of 44 mentions; can't carry headline weight). Quality/finish promoted as dominant praise pattern (23 of 44 = 52%).
 
 > Order = approximate frequency in captured reviews (1 review = 1 count). Real `[noun, count]` pairs require re-mining once 40 uncaptured reviews are captured; this list will likely re-order at that pass.
 
@@ -171,7 +168,6 @@ Provisional section sequence (subject to photo-tagging confirmation):
 | 3 | Hero trust line | "50 reviews · 4.9 stars on Google" | §Trust Signals |
 | 4 | Services list | General handyman; Plumbing; Electrical; Carpentry & framing; Tile; Pool deck construction; Interior painting | §Categories & Services (review-mined) |
 | 5 | Trust headline | "50 reviews · 4.9 stars on Google" | §Trust Signals |
-| 5a | Trust marquee — reply line | "Replies personally to nearly every review." | iter-3 corpus, 43/44 reviews — audit-bridge |
 | 6 | Trust quote 1 | Cheryl Mulhern excerpt (plumbing) | §Voice — Review 1 |
 | 7 | Trust quote 2 | Andrew Abad excerpt (repeat customer) | §Voice — Review 4 |
 | 8 | Trust quote 3 | Molly Groves excerpt (electrical) | §Voice — Review 3 |
@@ -199,7 +195,7 @@ Provisional section sequence (subject to photo-tagging confirmation):
 
 > Notes for tonight's audit-script design session.
 
-1. **Owner-reply behavior needs first-class capture (iter-1 finding overturned at iter-3).** The iter-1 audit concluded "Anthony does not reply to Google reviews" — a capture-method artifact (Places API truncates reply text on default fields). Iter-3 Playwright re-scrape via `.CDe7pd` recovered 43 replies across 44 reviews. The lesson is twofold: (a) v2.0 §4a needs an explicit `Owner reply behavior` sub-field with `reply_rate`, `length_distribution`, `recurring_openers`, and `verbatim_phrases_for_design_lift`; (b) never derive a voice-guide claim from the absence of a field the capture method might have truncated. Reply-pattern is both voice signal (informs §2 register) and trust signal (homepage marquee item).
+1. **No-reply operators are common enough to need first-class handling.** Anthony doesn't reply to Google reviews. Per the v2.0 contract, this looked like a `[gap]` in §4a *Owner language* and `[gap]` in §4a *Tone markers — owner*. Strict reading would have blocked synthesis on voice guide. But the *absence of replies is itself the signal* — and the v2.0 contract has no field for it. **Recommended addition to v2.0:** a §4a sub-field `Owner reply behavior: replies-to-all | replies-selectively | does-not-reply | unknown`, with the latter three each carrying voice-guide implications. Without this field, every no-reply operator generates a phantom block.
 
 2. **Customer-uploaded photos deserve their own tag.** Intake distinguished owner-uploaded vs customer-uploaded; v2.0 §10 didn't promote this to a tag. Customer-uploaded photos cross-reference reviews directly and are dramatically more useful for hero/proof use than owner-uploaded contractor mid-progress shots. **Recommended addition to v2.0 §10:** a third axis `provenance: owner-uploaded | customer-uploaded | both-attribution-known`, alongside subject and usability.
 
