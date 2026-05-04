@@ -851,8 +851,9 @@ main { padding-top: 72px; }
   .trust-row { gap: var(--s-4); }
   .trust-divider { display: none; }
   .trust-item { width: 100%; }
-  .sticky-call { display: block; }
-  main { padding-bottom: 64px; }
+  .sticky-call { display: none !important; }
+  .sticky-nav { display: block !important; }
+  main { padding-bottom: 76px; }
   .hero-cta-row { flex-direction: column; align-items: stretch; }
   .btn { width: 100%; }
 }
@@ -862,6 +863,15 @@ main { padding-top: 72px; }
 .form-status { margin-top: var(--s-4); padding: var(--s-3) var(--s-4); border-radius: var(--r-md); font-family: var(--font-body); font-size: var(--t-body-sm); }
 .form-status.success { background: rgba(45,106,79,0.10); color: var(--c-success); border: 1px solid rgba(45,106,79,0.25); }
 .form-status.error { background: rgba(155,44,44,0.10); color: var(--c-error); border: 1px solid rgba(155,44,44,0.25); }
+
+/* === Mobile bottom nav (replaces single-CTA sticky-call on mobile) === */
+.sticky-nav { display: none; position: fixed; left: 0; right: 0; bottom: 0; background: var(--c-paper); border-top: 1px solid var(--c-line); z-index: 90; box-shadow: 0 -4px 16px rgba(0,0,0,0.10); padding-bottom: env(safe-area-inset-bottom, 0); }
+.sticky-nav-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; padding: 6px 4px; }
+.sticky-nav a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 6px 4px; font-family: var(--font-body); font-weight: 600; font-size: 12px; color: var(--c-ink-soft); text-decoration: none; text-align: center; line-height: 1.2; border-radius: var(--r-md); }
+.sticky-nav a:active { background: var(--c-paper-2); }
+.sticky-nav a.phone { background: var(--c-brand); color: #fff; font-weight: 700; margin: 0 4px; }
+.sticky-nav a.phone:active { background: #4a2f15; }
+.sticky-nav a.active { color: var(--c-brand); border-bottom: 2px solid var(--c-brand); border-radius: 0; }
 </style>
 <script type="application/ld+json">
 {
@@ -1313,6 +1323,16 @@ main { padding-top: 72px; }
     </div>
   </div>
 </footer>
+
+<nav class="sticky-nav" aria-label="Mobile navigation">
+  <div class="sticky-nav-row">
+    <a href="#services">Services</a>
+    <a href="#proof">Proof</a>
+    <a href="tel:+12398678447" class="phone" aria-label="Call (239) 867-8447">📞 Call</a>
+    <a href="/reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <a class="sticky-call" href="tel:+12398678447">📞 Call (239) 867-8447</a>
 
